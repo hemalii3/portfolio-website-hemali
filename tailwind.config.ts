@@ -64,14 +64,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 data: {
-                    primary: '#FF9FB2', // Soft pink
-                    secondary: '#FFCCD5', // Light pink
+                    primary: '#FFFFFF', // White
+                    secondary: '#E0E0E0', // Light Gray
                     accent: '#FFFFFF', // White
-                    highlight: '#FFC2D1', // Medium pink
-                    darkBg: '#121417', // Keeping dark background
-                    darkCard: '#1c1f26', // Keeping dark card background
+                    highlight: '#F5F5F5', // Very Light Gray
+                    darkBg: '#121417', // Dark background
+                    darkCard: '#1c1f26', // Dark card background
                     darkText: '#FFFFFF', // White text
-                    darkAccent: '#313644' // Keeping dark accent
+                    darkAccent: '#313644' // Dark accent
                 }
 			},
 			borderRadius: {
@@ -138,7 +138,7 @@ export default {
                 'sans': ['Inter', 'sans-serif']
             },
             boxShadow: {
-                'glow': '0 0 10px rgba(255, 192, 203, 0.4)'
+                'glow': '0 0 20px rgba(255, 255, 255, 0.15)'
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
