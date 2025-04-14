@@ -54,16 +54,8 @@
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-data-blue via-data-purple to-data-pink text-transparent bg-clip-text bg-size-200 animate-gradient-shift;
-  }
-  
-  .gradient-border {
-    @apply relative rounded-lg p-[1px] bg-gradient-to-r from-data-blue via-data-purple to-data-pink;
-  }
-  
-  .skill-bar {
-    @apply h-2 rounded-full bg-gradient-to-r from-data-blue to-data-teal;
+  .text-gradient {
+    @apply bg-gradient-to-r from-data-secondary via-data-accent to-data-highlight text-transparent bg-clip-text bg-size-200 animate-gradient-shift;
   }
 }
 

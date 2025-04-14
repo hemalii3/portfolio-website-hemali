@@ -64,10 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 data: {
-                    blue: '#4361ee',
-                    purple: '#7209b7',
-                    pink: '#f72585',
-                    teal: '#4cc9f0',
+                    primary: '#6c5f5b',
+                    secondary: '#a4907c',
+                    accent: '#f0ebce',
+                    highlight: '#d5c5a1',
                     darkBg: '#1A1F2C',
                     darkCard: '#252A37',
                     darkText: '#E6E8EC',
