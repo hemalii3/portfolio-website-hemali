@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { GitHub, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
+import { Github, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -92,7 +91,7 @@ const Hero = () => {
                 <h3 className="text-xl font-semibold mb-4">Social Profiles</h3>
                 <div className="grid grid-cols-2 gap-3">
                   <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-data-blue transition-colors">
-                    <GitHub size={18} />
+                    <Github size={18} />
                     <span>GitHub</span>
                   </a>
                   <a href="https://medium.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-data-blue transition-colors">
