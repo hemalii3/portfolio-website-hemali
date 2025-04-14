@@ -65,11 +65,11 @@ export default {
 				},
                 data: {
                     primary: '#6c5f5b',
-                    secondary: '#a4907c',
+                    secondary: '#d5a021',
                     accent: '#f0ebce',
                     highlight: '#d5c5a1',
-                    darkBg: '#1A1F2C',
-                    darkCard: '#252A37',
+                    darkBg: '#121417',
+                    darkCard: '#1c1f26',
                     darkText: '#E6E8EC',
                     darkAccent: '#313644'
                 }
@@ -136,6 +136,12 @@ export default {
             fontFamily: {
                 'code': ['Fira Code', 'monospace'],
                 'sans': ['Inter', 'sans-serif']
+            },
+            boxShadow: {
+                'glow': '0 0 10px rgba(240, 235, 206, 0.3)'
+            },
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
             }
 		}
 	},
