@@ -72,21 +72,21 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-data-darkBg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          <span className="text-data-accent">Projects</span>
+          <span className="text-gradient">Projects</span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="group bg-data-darkCard rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col animate-fade-in"
+              className="group pink-glass rounded-2xl overflow-hidden shadow-xl hover:shadow-glow transition-all duration-500 flex flex-col animate-fade-in"
               style={{animationDelay: `${(project.id - 1) * 0.1}s`}}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={`Project ${project.id}`} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-data-darkBg to-transparent opacity-70"></div>
               </div>
@@ -95,7 +95,7 @@ const Projects = () => {
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool, index) => (
-                    <span key={index} className="text-xs bg-data-darkAccent rounded-full px-3 py-1">{tool}</span>
+                    <span key={index} className="text-xs bg-black/40 rounded-full px-3 py-1 border border-data-primary/30">{tool}</span>
                   ))}
                 </div>
               </div>
@@ -105,7 +105,7 @@ const Projects = () => {
                   href={project.link}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-data-secondary hover:text-data-accent transition-colors"
+                  className="flex items-center gap-1 text-sm text-data-primary hover:text-data-highlight transition-colors"
                 >
                   <ExternalLink size={16} />
                   <span>View Project</span>
@@ -116,7 +116,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-data-secondary hover:text-data-accent transition-colors"
+                    className="flex items-center gap-1 text-sm text-data-primary hover:text-data-highlight transition-colors"
                   >
                     <Github size={16} />
                     <span>GitHub</span>

@@ -16,24 +16,24 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91.2% 59.8%;
+    --primary: 340 100% 80%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 340 100% 88%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 340 5% 85%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 340 90% 85%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
+    --border: 340 40% 70%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 340 90% 80%;
 
     --radius: 0.5rem;
   }
@@ -56,7 +56,15 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-gradient-to-r from-data-accent via-data-highlight to-data-secondary text-transparent bg-clip-text bg-size-200 animate-gradient-shift;
+    @apply bg-gradient-to-r from-data-primary via-data-highlight to-data-secondary text-transparent bg-clip-text bg-size-200 animate-gradient-shift;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-glow border-data-primary/20 hover:border-data-primary/60;
+  }
+  
+  .pink-glass {
+    @apply backdrop-blur-sm bg-black/30 border border-data-primary/30 hover:border-data-primary/50 transition-all;
   }
 }
 
