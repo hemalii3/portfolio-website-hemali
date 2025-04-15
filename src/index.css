@@ -84,11 +84,15 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-data-darkAccent to-data-navy text-white relative overflow-hidden group;
+    @apply px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-data-darkAccent to-data-navy text-white relative overflow-hidden;
   }
 
   .btn-primary::before {
-    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 bg-gradient-to-r from-white/10 to-transparent transition-all duration-500 group-hover:opacity-100;
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 bg-gradient-to-r from-white/10 to-transparent transition-all duration-500;
+  }
+
+  .btn-primary:hover::before {
+    @apply opacity-100;
   }
 
   .btn-primary:hover {
@@ -96,11 +100,15 @@
   }
 
   .btn-secondary {
-    @apply px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-transparent border border-white/20 text-white relative overflow-hidden group;
+    @apply px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-transparent border border-white/20 text-white relative overflow-hidden;
   }
 
   .btn-secondary::before {
-    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 bg-white/5 transition-all duration-500 group-hover:opacity-100;
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 bg-white/5 transition-all duration-500;
+  }
+
+  .btn-secondary:hover::before {
+    @apply opacity-100;
   }
 
   .btn-secondary:hover {

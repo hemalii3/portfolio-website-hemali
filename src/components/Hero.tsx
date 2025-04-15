@@ -68,20 +68,20 @@ const Hero = () => {
             <div className="flex flex-wrap gap-6">
               <a 
                 href="#projects" 
-                className="btn-primary"
+                className="group btn-primary"
               >
                 <span className="relative z-10">View Projects</span>
               </a>
               <a 
                 href="#contact" 
-                className="btn-primary"
+                className="group btn-primary"
               >
                 <span className="relative z-10">Contact Me</span>
               </a>
               <a 
                 href="/resume.pdf" 
                 download
-                className="btn-primary flex items-center gap-2"
+                className="group btn-primary flex items-center gap-2"
               >
                 <span className="relative z-10 flex items-center">
                   Resume
