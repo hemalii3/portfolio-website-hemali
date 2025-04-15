@@ -68,10 +68,12 @@ export default {
                     secondary: '#E0E0E0', // Light Gray
                     accent: '#FFFFFF', // White
                     highlight: '#F5F5F5', // Very Light Gray
-                    darkBg: '#121417', // Dark background
-                    darkCard: '#1c1f26', // Dark card background
+                    darkBg: '#030A1C', // Rich black
+                    darkCard: '#051024', // Black pearl
                     darkText: '#FFFFFF', // White text
-                    darkAccent: '#313644' // Dark accent
+                    darkAccent: '#11244A', // Oxford blue
+                    navy: '#0B1C3E',     // Navy
+                    midnight: '#061831'  // Midnight
                 }
 			},
 			borderRadius: {
@@ -124,6 +126,24 @@ export default {
                     '100%': {
                         backgroundPosition: '0% 50%'
                     }
+                },
+                'slide-up': {
+                    '0%': {
+                        transform: 'translateY(20px)',
+                        opacity: '0'
+                    },
+                    '100%': {
+                        transform: 'translateY(0)',
+                        opacity: '1'
+                    }
+                },
+                'float': {
+                    '0%, 100%': {
+                        transform: 'translateY(0)'
+                    },
+                    '50%': {
+                        transform: 'translateY(-5px)'
+                    }
                 }
 			},
 			animation: {
@@ -131,14 +151,17 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
                 'fade-in': 'fade-in 0.5s ease-out',
                 'pulse-slow': 'pulse-slow 3s infinite',
-                'gradient-shift': 'gradient-shift 6s ease infinite'
+                'gradient-shift': 'gradient-shift 6s ease infinite',
+                'slide-up': 'slide-up 0.6s ease-out',
+                'float': 'float 3s ease-in-out infinite'
 			},
             fontFamily: {
                 'code': ['Fira Code', 'monospace'],
                 'sans': ['Inter', 'sans-serif']
             },
             boxShadow: {
-                'glow': '0 0 20px rgba(255, 255, 255, 0.15)'
+                'glow': '0 0 20px rgba(255, 255, 255, 0.15)',
+                'blue-glow': '0 0 20px rgba(17, 36, 74, 0.4)'
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
