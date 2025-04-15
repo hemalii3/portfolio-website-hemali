@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Mail, MapPin, Phone, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Github, Mail, MapPin, Phone, Twitter, Instagram, Linkedin, Download } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Hero = () => {
@@ -25,15 +25,15 @@ const Hero = () => {
               A passionate data analyst with a background in computer science, skilled in turning data into actionable insights through storytelling, visualization, and analytical thinking.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
-              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all">
+              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all animate-fade-in" style={{animationDelay: '0.1s'}}>
                 <MapPin size={16} className="text-data-primary" />
                 <span>Vienna, Austria</span>
               </div>
-              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all">
+              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all animate-fade-in" style={{animationDelay: '0.2s'}}>
                 <Mail size={16} className="text-data-primary" />
                 <span>hemalisuthar.work@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all">
+              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all animate-fade-in" style={{animationDelay: '0.3s'}}>
                 <Phone size={16} className="text-data-primary" />
                 <span>+43 6677897979</span>
               </div>
@@ -41,10 +41,12 @@ const Hero = () => {
             <div className="flex flex-wrap gap-6">
               <a 
                 href="#projects" 
-                className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-data-darkAccent to-data-navy text-white font-medium shadow-lg hover:shadow-blue-glow hover:translate-y-[-2px] transition-all overflow-hidden"
+                className="group relative px-8 py-3 rounded-lg overflow-hidden"
               >
-                <span className="relative z-10">View Projects</span>
-                <span className="absolute inset-0 bg-white/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-data-darkAccent to-data-navy rounded-lg"></span>
+                <span className="absolute inset-0 w-full h-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium">View Projects</span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               </a>
               <a 
                 href="#contact" 
@@ -52,10 +54,18 @@ const Hero = () => {
               >
                 <span className="relative">Contact Me</span>
               </a>
+              <a 
+                href="/resume.pdf" 
+                download
+                className="group relative px-8 py-3 rounded-lg bg-transparent border-2 border-white/20 text-white font-medium hover:border-white/50 hover:bg-white/5 transition-all flex items-center gap-2"
+              >
+                <span className="relative">Resume</span>
+                <Download size={16} className="group-hover:translate-y-[2px] transition-transform" />
+              </a>
             </div>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
-            <Card className="bg-gradient-to-br from-data-navy to-data-darkBg border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl hover:shadow-blue-glow overflow-hidden">
+            <Card className="bg-gradient-to-br from-data-navy to-data-darkBg border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl hover:shadow-blue-glow overflow-hidden animate-float">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-6 text-data-primary border-b border-white/10 pb-3">Connect With Me</h3>
                 <div className="grid grid-cols-2 gap-6">
@@ -121,22 +131,6 @@ const Hero = () => {
                 </div>
               </CardContent>
             </Card>
-            
-            {/* Quick stats or highlights */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-gradient-to-br from-data-navy to-data-darkBg border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:translate-y-[-2px]">
-                <CardContent className="p-4 text-center">
-                  <h4 className="text-lg font-bold text-white">9+</h4>
-                  <p className="text-sm text-white/70">Projects Completed</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-gradient-to-br from-data-navy to-data-darkBg border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:translate-y-[-2px]">
-                <CardContent className="p-4 text-center">
-                  <h4 className="text-lg font-bold text-white">4+</h4>
-                  <p className="text-sm text-white/70">Years Experience</p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </div>
