@@ -68,12 +68,12 @@ export default {
                     secondary: '#E0E0E0', // Light Gray
                     accent: '#FFFFFF', // White
                     highlight: '#F5F5F5', // Very Light Gray
-                    darkBg: '#030A1C', // Rich black
-                    darkCard: '#051024', // Black pearl
-                    darkText: '#FFFFFF', // White text
-                    darkAccent: '#11244A', // Oxford blue
-                    navy: '#0B1C3E',     // Navy
-                    midnight: '#061831'  // Midnight
+                    darkBg: '#0a192f', // Navy blue (updated)
+                    darkCard: '#112240', // Light navy (updated)
+                    darkText: '#8892b0', // Slate (updated)
+                    darkAccent: '#64ffda', // Teal (updated)
+                    navy: '#0a192f',     // Navy blue
+                    midnight: '#020c1b'  // Midnight
                 }
 			},
 			borderRadius: {
@@ -157,11 +157,12 @@ export default {
 			},
             fontFamily: {
                 'code': ['Fira Code', 'monospace'],
-                'sans': ['Inter', 'sans-serif']
+                'sans': ['Calibre', 'Inter', 'sans-serif'],
+                'mono': ['Fira Code', 'monospace']
             },
             boxShadow: {
-                'glow': '0 0 20px rgba(255, 255, 255, 0.15)',
-                'blue-glow': '0 0 20px rgba(17, 36, 74, 0.4)'
+                'glow': '0 0 20px rgba(100, 255, 218, 0.15)',
+                'navy-glow': '0 10px 30px -10px rgba(2, 12, 27, 0.7)'
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

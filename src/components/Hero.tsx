@@ -1,163 +1,139 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { Github, Mail, MapPin, Phone, Twitter, Instagram, Linkedin, Download } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import React, { useEffect, useState } from 'react';
+import { ChevronRight, Download } from 'lucide-react';
 
 const Hero = () => {
-  const [displayName, setDisplayName] = useState('');
-  const [displayTitle, setDisplayTitle] = useState('');
-  const fullName = "Hello, I'm Hemali Suthar";
-  const fullTitle = "Data Analyst | Data Enthusiast";
-  const nameRef = useRef(0);
-  const titleRef = useRef(0);
+  const [isMounted, setIsMounted] = useState(false);
   
   useEffect(() => {
-    // Animation for name
-    if (nameRef.current < fullName.length) {
-      const nameTimer = setTimeout(() => {
-        setDisplayName(fullName.substring(0, nameRef.current + 1));
-        nameRef.current += 1;
-      }, 100);
-      return () => clearTimeout(nameTimer);
-    } else if (titleRef.current < fullTitle.length) {
-      // Start title animation after name is complete
-      const titleTimer = setTimeout(() => {
-        setDisplayTitle(fullTitle.substring(0, titleRef.current + 1));
-        titleRef.current += 1;
-      }, 100);
-      return () => clearTimeout(titleTimer);
-    }
-  }, [displayName, displayTitle]);
+    const timeout = setTimeout(() => {
+      setIsMounted(true);
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, []);
   
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center pt-16 bg-gradient-to-b from-data-darkBg to-data-navy relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white rounded-full blur-[150px]"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-data-darkAccent rounded-full blur-[150px]"></div>
+    <section id="hero" className="min-h-screen flex flex-col justify-center pt-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="space-y-5">
+          <p 
+            style={{ transitionDelay: '100ms' }}
+            className={`font-mono text-[#64ffda] mb-6 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
+          >
+            Hi, my name is
+          </p>
+          
+          <h1 
+            style={{ transitionDelay: '200ms' }}
+            className={`text-5xl md:text-7xl font-semibold text-[#ccd6f6] leading-tight transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
+          >
+            Hemali Suthar.
+          </h1>
+          
+          <h2 
+            style={{ transitionDelay: '300ms' }}
+            className={`text-4xl md:text-6xl font-semibold text-[#8892b0] leading-tight mt-2 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
+          >
+            I turn data into insights.
+          </h2>
+          
+          <p 
+            style={{ transitionDelay: '400ms' }}
+            className={`text-lg text-[#8892b0] max-w-xl mt-6 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
+          >
+            I'm a data analyst with a background in computer science, specialized in transforming raw data into actionable business strategies. 
+            Currently, I focus on building insightful dashboards and data visualizations that tell compelling stories.
+          </p>
+          
+          <div 
+            style={{ transitionDelay: '500ms' }}
+            className={`mt-10 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
+          >
+            <a 
+              href="#projects" 
+              className="button-outline inline-flex items-center"
+            >
+              Check out my projects <ChevronRight size={16} className="ml-1" />
+            </a>
+          </div>
+        </div>
       </div>
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-8 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 min-h-[4rem] md:min-h-[4.5rem] lg:min-h-[5rem]">
-              <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent bg-size-200 animate-gradient-shift">{displayName}</span>
-              <span className="typing-cursor">|</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-light mb-8 text-data-primary min-h-[2rem] md:min-h-[2.5rem]">
-              {displayTitle}
-              {displayName === fullName && displayTitle !== fullTitle && <span className="typing-cursor">|</span>}
-            </h2>
-            <p className="text-lg mb-10 text-gray-300 max-w-2xl leading-relaxed">
-              A passionate data analyst with a background in computer science, skilled in turning data into actionable insights through storytelling, visualization, and analytical thinking.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-10">
-              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all animate-fade-in hover:translate-y-[-3px]" style={{animationDelay: '0.1s'}}>
-                <MapPin size={16} className="text-data-primary" />
-                <span>Vienna, Austria</span>
-              </div>
-              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all animate-fade-in hover:translate-y-[-3px]" style={{animationDelay: '0.2s'}}>
-                <Mail size={16} className="text-data-primary" />
-                <span>hemalisuthar.work@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2 bg-data-navy/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition-all animate-fade-in hover:translate-y-[-3px]" style={{animationDelay: '0.3s'}}>
-                <Phone size={16} className="text-data-primary" />
-                <span>+43 6677897979</span>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-6">
-              <a 
-                href="#projects" 
-                className="group btn-primary"
-              >
-                <span className="relative z-10">View Projects</span>
-              </a>
-              <a 
-                href="#contact" 
-                className="group btn-primary"
-              >
-                <span className="relative z-10">Contact Me</span>
-              </a>
-              <a 
-                href="/resume.pdf" 
-                download
-                className="group btn-primary flex items-center gap-2"
-              >
-                <span className="relative z-10 flex items-center">
-                  Resume
-                  <Download size={16} className="ml-2 group-hover:translate-y-[2px] transition-transform" />
-                </span>
-              </a>
-            </div>
-          </div>
-          <div className="lg:col-span-4 flex flex-col gap-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
-            <Card className="bg-gradient-to-br from-data-navy/80 to-data-darkBg/80 backdrop-blur-sm border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl hover:shadow-blue-glow overflow-hidden animate-float">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-6 text-data-primary border-b border-white/10 pb-3">Connect With Me</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  <a 
-                    href="https://github.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="group flex items-center gap-3 hover:text-data-primary transition-all"
-                  >
-                    <div className="p-2 rounded-lg bg-data-darkAccent/50 group-hover:bg-data-darkAccent group-hover:scale-110 transition-all">
-                      <Github size={18} />
-                    </div>
-                    <span>GitHub</span>
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="group flex items-center gap-3 hover:text-data-primary transition-all"
-                  >
-                    <div className="p-2 rounded-lg bg-data-darkAccent/50 group-hover:bg-data-darkAccent group-hover:scale-110 transition-all">
-                      <Linkedin size={18} />
-                    </div>
-                    <span>LinkedIn</span>
-                  </a>
-                  <a 
-                    href="https://medium.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="group flex items-center gap-3 hover:text-data-primary transition-all"
-                  >
-                    <div className="p-2 rounded-lg bg-data-darkAccent/50 group-hover:bg-data-darkAccent group-hover:scale-110 transition-all">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
-                        <path d="M8 9l3 3 3-3"></path>
-                        <path d="M8 15h8"></path>
-                      </svg>
-                    </div>
-                    <span>Medium</span>
-                  </a>
-                  <a 
-                    href="https://twitter.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="group flex items-center gap-3 hover:text-data-primary transition-all"
-                  >
-                    <div className="p-2 rounded-lg bg-data-darkAccent/50 group-hover:bg-data-darkAccent group-hover:scale-110 transition-all">
-                      <Twitter size={18} />
-                    </div>
-                    <span>Twitter</span>
-                  </a>
-                  <a 
-                    href="https://instagram.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="group flex items-center gap-3 hover:text-data-primary transition-all"
-                  >
-                    <div className="p-2 rounded-lg bg-data-darkAccent/50 group-hover:bg-data-darkAccent group-hover:scale-110 transition-all">
-                      <Instagram size={18} />
-                    </div>
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+      {/* Social links vertical */}
+      <div 
+        className={`fixed left-5 bottom-0 hidden md:block transition-all duration-300 ${isMounted ? 'opacity-100' : 'opacity-0'}`}
+        style={{ transitionDelay: '1000ms' }}
+      >
+        <ul className="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-[#a8b2d1] after:mx-auto after:mt-6">
+          <li>
+            <a 
+              href="https://github.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#a8b2d1] hover:text-[#64ffda] hover:transform hover:translate-y-[-3px] transition-all duration-300"
+              aria-label="GitHub"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://linkedin.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#a8b2d1] hover:text-[#64ffda] hover:transform hover:translate-y-[-3px] transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://twitter.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#a8b2d1] hover:text-[#64ffda] hover:transform hover:translate-y-[-3px] transition-all duration-300"
+              aria-label="Twitter"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="mailto:hemalisuthar.work@gmail.com" 
+              className="text-[#a8b2d1] hover:text-[#64ffda] hover:transform hover:translate-y-[-3px] transition-all duration-300"
+              aria-label="Email"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      {/* Email link vertical */}
+      <div 
+        className={`fixed right-5 bottom-0 hidden md:block transition-all duration-300 ${isMounted ? 'opacity-100' : 'opacity-0'}`}
+        style={{ transitionDelay: '1100ms' }}
+      >
+        <div className="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-[#a8b2d1] after:mx-auto after:mt-6">
+          <a 
+            href="mailto:hemalisuthar.work@gmail.com" 
+            className="font-mono text-[#a8b2d1] hover:text-[#64ffda] hover:transform hover:translate-y-[-3px] transition-all duration-300 vertical-text"
+            style={{ writingMode: 'vertical-rl' }}
+          >
+            hemalisuthar.work@gmail.com
+          </a>
         </div>
       </div>
     </section>

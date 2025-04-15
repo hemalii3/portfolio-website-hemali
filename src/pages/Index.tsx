@@ -35,9 +35,9 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-data-darkBg text-data-darkText">
+    <div className="min-h-screen bg-[#0a192f]">
       <Navbar />
-      <main>
+      <main className="px-0 md:px-12 lg:px-24">
         <Hero />
         <Education />
         <Skills />
