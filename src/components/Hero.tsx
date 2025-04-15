@@ -32,9 +32,9 @@ const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center pt-16 bg-gradient-to-b from-data-darkBg to-data-navy relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-5 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-data-darkAccent rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-data-darkAccent rounded-full blur-[150px]"></div>
       </div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -68,39 +68,30 @@ const Hero = () => {
             <div className="flex flex-wrap gap-6">
               <a 
                 href="#projects" 
-                className="group relative px-8 py-3 rounded-lg overflow-hidden hover:shadow-blue-glow transition-all duration-300 hover:-translate-y-1"
+                className="btn-primary"
               >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-data-darkAccent to-data-navy rounded-lg"></span>
-                <span className="absolute inset-0 w-full h-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
-                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium">View Projects</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                <span className="relative z-10">View Projects</span>
               </a>
               <a 
                 href="#contact" 
-                className="group relative px-8 py-3 rounded-lg overflow-hidden hover:shadow-blue-glow transition-all duration-300 hover:-translate-y-1"
+                className="btn-primary"
               >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-data-darkAccent to-data-navy rounded-lg"></span>
-                <span className="absolute inset-0 w-full h-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
-                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium">Contact Me</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                <span className="relative z-10">Contact Me</span>
               </a>
               <a 
                 href="/resume.pdf" 
                 download
-                className="group relative px-8 py-3 rounded-lg overflow-hidden hover:shadow-blue-glow transition-all duration-300 hover:-translate-y-1 flex items-center gap-2"
+                className="btn-primary flex items-center gap-2"
               >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-data-darkAccent to-data-navy rounded-lg"></span>
-                <span className="absolute inset-0 w-full h-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
-                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-medium">
+                <span className="relative z-10 flex items-center">
                   Resume
-                  <Download size={16} className="group-hover:translate-y-[2px] transition-transform" />
+                  <Download size={16} className="ml-2 group-hover:translate-y-[2px] transition-transform" />
                 </span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               </a>
             </div>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
-            <Card className="bg-gradient-to-br from-data-navy to-data-darkBg border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl hover:shadow-blue-glow overflow-hidden animate-float">
+            <Card className="bg-gradient-to-br from-data-navy/80 to-data-darkBg/80 backdrop-blur-sm border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl hover:shadow-blue-glow overflow-hidden animate-float">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-6 text-data-primary border-b border-white/10 pb-3">Connect With Me</h3>
                 <div className="grid grid-cols-2 gap-6">

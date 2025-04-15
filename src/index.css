@@ -84,11 +84,27 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-data-darkAccent to-data-navy text-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all;
+    @apply px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-data-darkAccent to-data-navy text-white relative overflow-hidden group;
+  }
+
+  .btn-primary::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 bg-gradient-to-r from-white/10 to-transparent transition-all duration-500 group-hover:opacity-100;
+  }
+
+  .btn-primary:hover {
+    @apply transform -translate-y-1;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 hover:border-white/40 transition-all;
+    @apply px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-transparent border border-white/20 text-white relative overflow-hidden group;
+  }
+
+  .btn-secondary::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 bg-white/5 transition-all duration-500 group-hover:opacity-100;
+  }
+
+  .btn-secondary:hover {
+    @apply transform -translate-y-1 border-white/40;
   }
   
   /* Enhanced animation components */
@@ -267,11 +283,16 @@
   background: rgba(255,255,255,0.2);
 }
 
-/* Custom cursor styles */
+/* Updated cursor styles */
 body {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10' fill-opacity='0.2' fill='%23fff'/%3E%3Ccircle cx='12' cy='12' r='2' fill='white'/%3E%3C/svg%3E") 12 12, auto;
+  cursor: default;
 }
 
-a, button, [role="button"] {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10' fill-opacity='0.3' fill='%2311244A'/%3E%3Ccircle cx='12' cy='12' r='3' fill='white'/%3E%3C/svg%3E") 12 12, pointer;
+a, button, [role="button"], .interactive {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interactive:hover {
+  transform: scale(1.05);
 }

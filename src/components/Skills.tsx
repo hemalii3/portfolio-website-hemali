@@ -48,8 +48,8 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gradient-to-b from-data-darkBg to-data-midnight relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-        <div className="absolute -right-40 -top-40 w-96 h-96 bg-data-navy rounded-full blur-3xl"></div>
-        <div className="absolute -left-20 top-1/2 w-80 h-80 bg-data-darkAccent rounded-full blur-3xl"></div>
+        <div className="absolute -right-40 -top-40 w-96 h-96 bg-data-navy rounded-full blur-[150px]"></div>
+        <div className="absolute -left-20 top-1/2 w-80 h-80 bg-data-darkAccent rounded-full blur-[150px]"></div>
       </div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -68,8 +68,9 @@ const Skills = () => {
               className="group relative"
               style={{animationDelay: `${0.1 * index}s`}}
             >
-              <Card className="h-full bg-gradient-to-br from-data-midnight to-data-darkBg backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-blue-glow hover:border-white/20 animate-slide-up">
-                <CardContent className="p-8">
+              <div className="absolute inset-0 bg-gradient-to-r from-data-darkAccent/30 to-data-navy/30 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 rounded-xl"></div>
+              <Card className="h-full backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:border-white/20 animate-slide-up bg-gradient-to-br from-data-midnight/70 to-data-darkBg/70 hover:translate-y-[-5px]">
+                <CardContent className="p-8 relative z-10">
                   <div className="flex items-center mb-6">
                     <div className="mr-4 bg-gradient-to-br from-data-darkAccent to-data-navy p-3 rounded-lg group-hover:animate-float transition-all duration-300">
                       {category.icon}
@@ -87,12 +88,12 @@ const Skills = () => {
                       <HoverCard key={skillIndex}>
                         <HoverCardTrigger asChild>
                           <span 
-                            className="px-4 py-2 bg-gradient-to-r from-data-navy/50 to-data-darkAccent/50 rounded-lg text-sm border border-white/10 hover:border-white/30 hover:shadow-inner transition-all cursor-pointer"
+                            className="px-4 py-2 bg-data-darkAccent/30 rounded-lg text-sm border border-white/10 hover:border-white/30 hover:bg-data-darkAccent/50 transition-all cursor-pointer hover:scale-105 duration-300"
                           >
                             {skill}
                           </span>
                         </HoverCardTrigger>
-                        <HoverCardContent className="w-auto bg-data-midnight border border-white/20 text-white">
+                        <HoverCardContent className="w-auto bg-data-midnight/90 backdrop-blur-md border border-white/20 text-white">
                           <div className="p-1">
                             <p className="text-sm">{skill}</p>
                           </div>
