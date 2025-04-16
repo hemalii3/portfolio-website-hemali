@@ -15,8 +15,7 @@
     --light-slate: 225 30% 75%;
     --lightest-slate: 225 35% 85%;
     --white: 0 0% 100%;
-    --green: 158 64% 52%;
-    --green-tint: 158 64% 90%;
+    --accent: 0 0% 100%;
   }
   
   * {
@@ -39,51 +38,37 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply text-lightest-slate font-semibold;
+    @apply text-white font-semibold;
   }
 }
 
 @layer components {
   .cursor-dot {
-    @apply fixed top-0 left-0 w-2 h-2 bg-green rounded-full pointer-events-none z-[9999] hidden md:block;
+    @apply fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] hidden md:block;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s;
   }
   
   .cursor-outline {
-    @apply fixed top-0 left-0 w-8 h-8 bg-transparent border border-green rounded-full pointer-events-none z-[9998] hidden md:block;
+    @apply fixed top-0 left-0 w-8 h-8 bg-transparent border border-white rounded-full pointer-events-none z-[9998] hidden md:block;
     transform: translate(-50%, -50%);
     transition: transform 0.1s;
   }
   
-  .numbered-heading {
-    @apply flex items-center w-full whitespace-nowrap relative text-2xl font-semibold text-lightest-slate mb-10 mt-2;
-  }
-  
-  .numbered-heading:after {
-    @apply content-[''] ml-4 w-full h-px bg-lightest-navy;
-  }
-  
-  .numbered-heading::before {
-    @apply mr-2 text-green font-mono text-xl font-normal;
-    counter-increment: section;
-    content: "0" counter(section) ".";
+  .section-heading {
+    @apply text-2xl font-semibold text-white mb-10 mt-2;
   }
   
   .nav-link {
-    @apply text-lightest-slate hover:text-green transition-colors duration-300 flex items-center;
-  }
-  
-  .nav-link span {
-    @apply text-green font-mono mr-1 text-sm;
+    @apply text-white/70 hover:text-white transition-colors duration-300 flex items-center;
   }
   
   .link-highlight {
-    @apply text-green relative inline-block hover:text-green transition-all;
+    @apply text-white relative inline-block hover:text-white transition-all;
   }
   
   .inline-link {
-    @apply text-green relative inline-block transition-all;
+    @apply text-white relative inline-block transition-all;
     position: relative;
   }
   
@@ -95,7 +80,7 @@
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: rgba(100, 255, 218, 1);
+    background-color: rgba(255, 255, 255, 1);
     transform-origin: bottom right;
     transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   }
@@ -106,19 +91,15 @@
   }
   
   .button-outline {
-    @apply px-6 py-4 border border-green text-green rounded font-mono text-sm hover:bg-green/10 transition-all duration-300;
+    @apply px-6 py-4 border border-white text-white rounded font-mono text-sm hover:bg-white/10 transition-all duration-300;
   }
   
   .nav-item .nav-link.active .nav-line {
     @apply w-16;
   }
   
-  .logo-container {
-    @apply flex items-center justify-center w-12 h-12 bg-green/10 rounded text-green border border-green;
-  }
-  
-  .logo-text {
-    @apply font-mono font-bold text-lg;
+  .skill-tag {
+    @apply inline-block px-2 py-0.5 rounded text-xs font-mono text-white bg-white/10 hover:bg-white/20 transition-colors;
   }
 }
 

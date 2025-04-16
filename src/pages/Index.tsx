@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
-import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
@@ -11,7 +10,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    // Custom cursor effect similar to brittanychiang.com
+    // Custom cursor effect
     const cursor = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     
@@ -38,7 +37,6 @@ const Index = () => {
   
   return (
     <Layout>
-      <Hero />
       <About />
       <Experience />
       <Projects />

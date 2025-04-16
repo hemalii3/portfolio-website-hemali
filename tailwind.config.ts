@@ -53,7 +53,7 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
         },
-        // Brittany Chiang inspired colors
+        // Modified color scheme
         'navy': 'hsl(var(--navy))',
         'light-navy': 'hsl(var(--light-navy))',
         'lightest-navy': 'hsl(var(--lightest-navy))',
@@ -62,8 +62,6 @@ export default {
         'light-slate': 'hsl(var(--light-slate))',
         'lightest-slate': 'hsl(var(--lightest-slate))',
         'white': 'hsl(var(--white))',
-        'green': 'hsl(var(--green))',
-        'green-tint': 'hsl(var(--green-tint))'
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -72,12 +70,12 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
+          from: { height: '0', opacity: '0' },
+          to: { height: 'var(--radix-accordion-content-height)', opacity: '1' }
         },
         'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
+          from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+          to: { height: '0', opacity: '0' }
         },
         'fade-in': {
           '0%': {
@@ -142,7 +140,7 @@ export default {
         'mono': ['Fira Code', 'monospace']
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(100, 255, 218, 0.15)',
+        'glow': '0 0 20px rgba(255, 255, 255, 0.15)',
         'navy-glow': '0 10px 30px -10px rgba(2, 12, 27, 0.7)'
       }
     }

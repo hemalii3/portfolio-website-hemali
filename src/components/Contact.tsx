@@ -26,7 +26,7 @@ const Contact = () => {
   
   return (
     <section id="contact" className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <h2 className="numbered-heading mb-8">Get In Touch</h2>
+      <h2 className="section-heading">Get In Touch</h2>
       
       <div className="text-center max-w-md mx-auto">
         <p className="text-slate mb-10">
@@ -36,28 +36,28 @@ const Contact = () => {
         
         <div className="space-y-6 text-left mb-12">
           <div className="flex items-center">
-            <Mail size={20} className="text-green mr-4" />
+            <Mail size={20} className="text-white mr-4" />
             <a 
               href="mailto:hemalisuthar.work@gmail.com" 
-              className="text-lightest-slate hover:text-green transition-colors"
+              className="text-white hover:text-white/80 transition-colors"
             >
               hemalisuthar.work@gmail.com
             </a>
           </div>
           
           <div className="flex items-center">
-            <Phone size={20} className="text-green mr-4" />
+            <Phone size={20} className="text-white mr-4" />
             <a 
               href="tel:+43 6677897979" 
-              className="text-lightest-slate hover:text-green transition-colors"
+              className="text-white hover:text-white/80 transition-colors"
             >
               +43 6677897979
             </a>
           </div>
           
           <div className="flex items-center">
-            <MapPin size={20} className="text-green mr-4" />
-            <span className="text-lightest-slate">Vienna, Austria</span>
+            <MapPin size={20} className="text-white mr-4" />
+            <span className="text-white">Vienna, Austria</span>
           </div>
         </div>
         
