@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 
 const Education = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
@@ -43,60 +42,35 @@ const Education = () => {
   
   return (
     <section id="education" className={`mb-24 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <h2 className="numbered-heading">Education</h2>
+      <h2 className="section-heading">Education</h2>
       
-      <div className="flex flex-col md:flex-row mt-10">
-        {/* Tab Buttons */}
-        <div className="flex md:flex-col overflow-x-auto mb-6 md:mb-0 md:mr-8 md:min-w-[140px]">
-          {educationData.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveTab(i)}
-              className={`px-4 py-3 text-left font-mono text-sm whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 transition-all ${
-                activeTab === i 
-                  ? 'text-green border-green bg-light-navy md:bg-light-navy' 
-                  : 'text-slate border-lightest-navy hover:text-green hover:bg-light-navy/50'
-              }`}
-            >
-              {item.institution.split(',')[0]}
-            </button>
-          ))}
-        </div>
-        
-        {/* Tab Content */}
-        <div className="flex-1">
-          {educationData.map((education, idx) => (
-            <div
-              key={idx}
-              className={`space-y-4 transition-all duration-300 ${
-                activeTab === idx ? 'block opacity-100' : 'hidden opacity-0'
-              }`}
-            >
-              <h3 className="text-xl font-medium text-lightest-slate">
-                {education.degree}{' '}
-                <span className="text-green">@ {education.institution}</span>
-              </h3>
-              
-              <p className="font-mono text-sm text-slate">
-                {education.period}
-              </p>
-              
-              <p className="text-slate">{education.description}</p>
-              
-              <div className="mt-4">
-                <h4 className="text-lightest-slate mb-2 font-medium">Notable Courses</h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {education.courses.map((course, i) => (
-                    <li key={i} className="flex">
-                      <span className="text-green mr-2">▹</span>
-                      <span className="text-slate">{course}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      <div className="space-y-12 mt-10">
+        {educationData.map((education, index) => (
+          <div key={index} className="bg-light-navy/30 p-6 rounded-lg">
+            <h3 className="text-xl font-medium text-lightest-slate mb-2">
+              {education.degree}{' '}
+              <span className="text-white">@ {education.institution}</span>
+            </h3>
+            
+            <p className="font-mono text-sm text-slate mb-4">
+              {education.period}
+            </p>
+            
+            <p className="text-slate mb-4">{education.description}</p>
+            
+            <div className="mt-2">
+              <h4 className="text-lightest-slate mb-2 font-medium">Notable Courses</h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {education.courses.map((course, i) => (
+                  <li key={i} className="flex">
+                    <span className="text-white mr-2">▹</span>
+                    <span className="text-slate">{course}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

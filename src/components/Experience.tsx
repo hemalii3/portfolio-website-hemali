@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
@@ -55,65 +54,40 @@ const Experience = () => {
   
   return (
     <section id="experience" className={`mb-24 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <h2 className="numbered-heading">Where I've Worked</h2>
+      <h2 className="section-heading">Where I've Worked</h2>
       
-      <div className="flex flex-col md:flex-row mt-10">
-        {/* Tab Buttons */}
-        <div className="flex md:flex-col overflow-x-auto mb-6 md:mb-0 md:mr-8 md:min-w-[140px]">
-          {experienceData.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveTab(i)}
-              className={`px-4 py-3 text-left font-mono text-sm whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 transition-all ${
-                activeTab === i 
-                  ? 'text-green border-green bg-light-navy md:bg-light-navy' 
-                  : 'text-slate border-lightest-navy hover:text-green hover:bg-light-navy/50'
-              }`}
-            >
-              {item.company}
-            </button>
-          ))}
-        </div>
-        
-        {/* Tab Content */}
-        <div className="flex-1">
-          {experienceData.map((experience, idx) => (
-            <div
-              key={idx}
-              className={`space-y-4 transition-all duration-300 ${
-                activeTab === idx ? 'block opacity-100' : 'hidden opacity-0'
-              }`}
-            >
-              <h3 className="text-xl font-medium text-lightest-slate">
-                {experience.title}{' '}
-                <span className="text-green">
-                  @ <a href={experience.url} className="inline-link" target="_blank" rel="noopener noreferrer">{experience.company}</a>
+      <div className="space-y-12 mt-10">
+        {experienceData.map((experience, index) => (
+          <div key={index} className="bg-light-navy/30 p-6 rounded-lg">
+            <h3 className="text-xl font-medium text-lightest-slate mb-2">
+              {experience.title}{' '}
+              <span className="text-white">
+                @ <a href={experience.url} className="inline-link" target="_blank" rel="noopener noreferrer">{experience.company}</a>
+              </span>
+            </h3>
+            
+            <p className="font-mono text-sm text-slate mb-4">
+              {experience.period}
+            </p>
+            
+            <ul className="space-y-2 mb-4">
+              {experience.description.map((bullet, i) => (
+                <li key={i} className="flex">
+                  <span className="text-white mr-2">▹</span>
+                  <span className="text-slate">{bullet}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div className="flex flex-wrap gap-2 pt-2">
+              {experience.skills.map((skill, i) => (
+                <span key={i} className="text-xs px-3 py-1 rounded font-mono bg-light-navy text-lightest-slate">
+                  {skill}
                 </span>
-              </h3>
-              
-              <p className="font-mono text-sm text-slate">
-                {experience.period}
-              </p>
-              
-              <ul className="space-y-2">
-                {experience.description.map((bullet, i) => (
-                  <li key={i} className="flex">
-                    <span className="text-green mr-2">▹</span>
-                    <span className="text-slate">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="flex flex-wrap gap-2 pt-2">
-                {experience.skills.map((skill, i) => (
-                  <span key={i} className="text-xs px-3 py-1 rounded font-mono bg-light-navy text-lightest-slate">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

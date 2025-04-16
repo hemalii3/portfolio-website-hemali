@@ -29,12 +29,12 @@ const Contact = () => {
       <h2 className="section-heading">Get In Touch</h2>
       
       <div className="text-center max-w-md mx-auto">
-        <p className="text-slate mb-10">
+        <p className="text-slate mb-8">
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
           I'll do my best to get back to you!
         </p>
         
-        <div className="space-y-6 text-left mb-12">
+        <div className="space-y-5 text-left mb-10 bg-light-navy/30 p-6 rounded-lg">
           <div className="flex items-center">
             <Mail size={20} className="text-white mr-4" />
             <a 

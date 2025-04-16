@@ -100,71 +100,73 @@ const Projects = () => {
       <h2 className="section-heading">Projects</h2>
       
       {/* Featured Projects */}
-      <div className="space-y-16 mt-10">
+      <div className="space-y-12 mt-10">
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
-            className="grid grid-cols-12 gap-4 group"
+            className="bg-light-navy/30 p-6 rounded-lg"
           >
-            {/* Project Image */}
-            <div className="col-span-12 md:col-span-5 rounded overflow-hidden">
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-auto object-cover rounded"
-                />
-              </a>
-            </div>
-            
-            {/* Project Content */}
-            <div className="col-span-12 md:col-span-7">
-              <h3 className="flex items-center text-xl text-white font-semibold mb-3">
+            <div className="grid grid-cols-12 gap-4 group">
+              {/* Project Image */}
+              <div className="col-span-12 md:col-span-5 rounded overflow-hidden mb-4 md:mb-0">
                 <a 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-white/80 transition-colors mr-2"
+                  className="block"
                 >
-                  {project.title}
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-auto object-cover rounded"
+                  />
                 </a>
-                <ExternalLink size={16} className="text-white/70" />
-              </h3>
-              
-              <p className="text-slate mb-4">{project.description}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tools.map((tool) => (
-                  <span key={tool} className="skill-tag">{tool}</span>
-                ))}
               </div>
               
-              <div className="flex gap-3 text-white/70">
-                {project.github && (
+              {/* Project Content */}
+              <div className="col-span-12 md:col-span-7">
+                <h3 className="flex items-center text-xl text-white font-semibold mb-3">
                   <a 
-                    href={project.github} 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-white/80 transition-colors mr-2"
+                  >
+                    {project.title}
+                  </a>
+                  <ExternalLink size={16} className="text-white/70" />
+                </h3>
+                
+                <p className="text-slate mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tools.map((tool) => (
+                    <span key={tool} className="text-xs px-3 py-1 rounded font-mono bg-light-navy text-lightest-slate">{tool}</span>
+                  ))}
+                </div>
+                
+                <div className="flex gap-3 text-white/70">
+                  {project.github && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors"
+                      aria-label="GitHub Repository"
+                    >
+                      <Github size={20} />
+                    </a>
+                  )}
+                  <a 
+                    href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
-                    aria-label="GitHub Repository"
+                    aria-label="Live Project"
                   >
-                    <Github size={20} />
+                    <ExternalLink size={20} />
                   </a>
-                )}
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                  aria-label="Live Project"
-                >
-                  <ExternalLink size={20} />
-                </a>
+                </div>
               </div>
             </div>
           </div>
