@@ -34,7 +34,7 @@ const Education = () => {
       courses: ['Advanced Data Science', 'Statistical Machine Learning', 'Big Data Analytics', 'Natural Language Processing']
     },
     {
-      degree: 'Bachelor's in Computer Science',
+      degree: "Bachelor's in Computer Science",
       institution: 'Sardar Patel University, India',
       period: '2021 – 2024',
       description: 'Completed undergraduate studies with a focus on programming fundamentals, data structures, and database systems.',
