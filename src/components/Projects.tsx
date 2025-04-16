@@ -130,7 +130,7 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-white/80 transition-colors mr-2"
+                    className="hover:text-white/80 transition-colors mr-2 inline-link"
                   >
                     {project.title}
                   </a>
@@ -174,9 +174,9 @@ const Projects = () => {
       </div>
       
       <div className="text-center mt-12">
-        <Link to="/projects" className="button-outline inline-flex items-center group">
+        <Link to="/projects" className="button-link inline-flex items-center group">
           <span>View Full Project Archive</span>
-          <ExternalLink size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+          <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </section>

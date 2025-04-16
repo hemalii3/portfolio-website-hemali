@@ -90,8 +90,8 @@
     transform-origin: bottom left;
   }
   
-  .button-outline {
-    @apply px-6 py-4 border border-white text-white rounded font-mono text-sm hover:bg-white/10 transition-all duration-300;
+  .button-link {
+    @apply px-2 py-1 text-white rounded font-mono text-sm hover:text-white/80 transition-all duration-300 flex items-center gap-2;
   }
   
   .nav-item .nav-link.active .nav-line {

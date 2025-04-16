@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { ExternalLink } from 'lucide-react';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,7 +63,10 @@ const Experience = () => {
             <h3 className="text-xl font-medium text-lightest-slate mb-2">
               {experience.title}{' '}
               <span className="text-white">
-                @ <a href={experience.url} className="inline-link" target="_blank" rel="noopener noreferrer">{experience.company}</a>
+                @ <a href={experience.url} className="inline-link" target="_blank" rel="noopener noreferrer">
+                    {experience.company}
+                    <ExternalLink size={14} className="inline ml-1" />
+                  </a>
               </span>
             </h3>
             

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +39,7 @@ const Contact = () => {
             <Mail size={20} className="text-white mr-4" />
             <a 
               href="mailto:hemalisuthar.work@gmail.com" 
-              className="text-white hover:text-white/80 transition-colors"
+              className="text-white hover:text-white/80 transition-colors inline-link"
             >
               hemalisuthar.work@gmail.com
             </a>
@@ -49,7 +49,7 @@ const Contact = () => {
             <Phone size={20} className="text-white mr-4" />
             <a 
               href="tel:+43 6677897979" 
-              className="text-white hover:text-white/80 transition-colors"
+              className="text-white hover:text-white/80 transition-colors inline-link"
             >
               +43 6677897979
             </a>
@@ -63,9 +63,10 @@ const Contact = () => {
         
         <a 
           href="mailto:hemalisuthar.work@gmail.com" 
-          className="button-outline inline-flex items-center"
+          className="button-link inline-flex items-center group"
         >
-          Say Hello
+          <span>Say Hello</span>
+          <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
     </section>

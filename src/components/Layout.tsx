@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Github, Linkedin, Twitter, Instagram, Book, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, BookMarked, ExternalLink } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 
 interface NavItem {
@@ -17,6 +17,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const navItems: NavItem[] = [
     { name: 'About', url: '#about' },
     { name: 'Experience', url: '#experience' },
+    { name: 'Education', url: '#education' },
     { name: 'Projects', url: '#projects' }
   ];
   
@@ -68,9 +69,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-navy text-slate">
       {/* Sidebar - adjusted to 40% width */}
-      <aside className="lg:w-[40%] lg:h-screen px-6 py-8 lg:fixed lg:top-0 lg:left-0 flex flex-col justify-between z-10">
-        <div>
-          <div className="mb-8">
+      <aside className="lg:w-[40%] lg:h-screen px-6 py-8 lg:fixed lg:top-0 lg:left-0 flex flex-col justify-between z-10 pb-10">
+        <div className="mt-10">
+          <div className="mb-6">
             <h1 className="text-4xl font-semibold text-white mb-2">Hemali Suthar</h1>
             <h2 className="text-xl text-white/80 mb-4">Data Analyst</h2>
             <p className="text-slate mb-6">
@@ -80,7 +81,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           
           {isHome && (
             <nav className="hidden lg:block">
-              <ol className="flex flex-col space-y-3">
+              <ol className="flex flex-col space-y-2">
                 {navItems.map(({ name, url }, i) => (
                   <li key={i} className="nav-item">
                     <Link 
@@ -95,55 +96,55 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </ol>
             </nav>
           )}
-        </div>
         
-        <div className="hidden lg:block mt-6">
-          <div className="flex items-center space-x-4 mb-6">
-            <a 
-              href="https://github.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
-            </a>
-            <a 
-              href="https://linkedin.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a 
-              href="https://twitter.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-              aria-label="Twitter"
-            >
-              <Twitter size={20} />
-            </a>
-            <a 
-              href="https://instagram.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} />
-            </a>
-            <a 
-              href="https://goodreads.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-              aria-label="Goodreads"
-            >
-              <Book size={18} strokeWidth={1.5} />
-            </a>
+          <div className="mt-6">
+            <div className="flex items-center space-x-4 mb-4">
+              <a 
+                href="https://github.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <a 
+                href="https://linkedin.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://twitter.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+              <a 
+                href="https://instagram.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="https://goodreads.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                aria-label="Goodreads"
+              >
+                <BookMarked size={18} strokeWidth={1.5} />
+              </a>
+            </div>
           </div>
         </div>
       </aside>
@@ -153,7 +154,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         ref={mainContentRef}
         className="lg:ml-[40%] flex-1 lg:h-screen lg:overflow-y-auto custom-scrollbar pb-10"
       >
-        <div className="max-w-3xl mx-auto px-6 py-20">
+        <div className="max-w-3xl mx-auto px-6 py-10">
           {children}
         </div>
         
