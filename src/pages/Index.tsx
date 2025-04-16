@@ -1,52 +1,51 @@
 
 import React, { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
+import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
-import Education from '@/components/Education';
-import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
+import About from '@/components/About';
 import Experience from '@/components/Experience';
+import Projects from '@/components/Projects';
+import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  // Add smooth scroll behavior for anchor links
   useEffect(() => {
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest('a');
-      
-      if (anchor && anchor.hash && anchor.href.includes(window.location.pathname)) {
-        e.preventDefault();
-        const targetElement = document.querySelector(anchor.hash);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Update URL hash without causing a jump
-          window.history.pushState(null, '', anchor.hash);
-        }
-      }
-    };
+    // Custom cursor effect similar to brittanychiang.com
+    const cursor = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
     
-    document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
+    window.addEventListener('mousemove', (e) => {
+      if (cursor && cursorOutline) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        
+        (cursor as HTMLElement).style.left = `${posX}px`;
+        (cursor as HTMLElement).style.top = `${posY}px`;
+        
+        // Add delay to outline cursor for trailing effect
+        setTimeout(() => {
+          (cursorOutline as HTMLElement).style.left = `${posX}px`;
+          (cursorOutline as HTMLElement).style.top = `${posY}px`;
+        }, 80);
+      }
+    });
+    
+    return () => {
+      window.removeEventListener('mousemove', () => {});
+    };
   }, []);
   
   return (
-    <div className="min-h-screen bg-[#0a192f]">
-      <Navbar />
-      <main className="px-0 md:px-12 lg:px-24">
-        <Hero />
-        <Education />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
+    <Layout>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Education />
+      <Contact />
       <Footer />
-    </div>
+    </Layout>
   );
 };
 
