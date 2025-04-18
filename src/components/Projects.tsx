@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -99,16 +98,14 @@ const Projects = () => {
     <section id="projects" className={`mb-24 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <h2 className="section-heading">Projects</h2>
       
-      {/* Featured Projects */}
       <div className="space-y-12 mt-10">
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
             className="bg-light-navy/30 p-6 rounded-lg"
           >
-            <div className="grid grid-cols-12 gap-4 group">
-              {/* Project Image */}
-              <div className="col-span-12 md:col-span-5 rounded overflow-hidden mb-4 md:mb-0">
+            <div className="grid grid-cols-12 gap-6 group">
+              <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
                 <a 
                   href={project.link} 
                   target="_blank" 
@@ -123,8 +120,7 @@ const Projects = () => {
                 </a>
               </div>
               
-              {/* Project Content */}
-              <div className="col-span-12 md:col-span-7">
+              <div className="col-span-12 md:col-span-8">
                 <h3 className="flex items-center text-xl text-white font-semibold mb-3">
                   <a 
                     href={project.link} 
@@ -174,7 +170,7 @@ const Projects = () => {
       </div>
       
       <div className="text-center mt-12">
-        <Link to="/projects" className="button-link inline-flex items-center group">
+        <Link to="/projects" className="button-link inline-flex items-center group text-[#1EAEDB]">
           <span>View Full Project Archive</span>
           <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>

@@ -15,6 +15,7 @@
     --lightest-slate: 225 35% 85%;
     --white: 0 0% 100%;
     --accent: 0 0% 100%;
+    --teal: 171 70% 50%;
   }
   
   * {
@@ -43,23 +44,23 @@
 
 @layer components {
   .cursor-dot {
-    @apply fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] hidden md:block;
+    @apply fixed top-0 left-0 w-3 h-3 bg-[#1EAEDB] rounded-full pointer-events-none z-[9999] block;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s;
   }
   
   .cursor-outline {
-    @apply fixed top-0 left-0 w-8 h-8 bg-transparent border border-white rounded-full pointer-events-none z-[9998] hidden md:block;
+    @apply fixed top-0 left-0 w-10 h-10 bg-transparent border border-[#1EAEDB] rounded-full pointer-events-none z-[9998] block;
     transform: translate(-50%, -50%);
     transition: transform 0.1s;
   }
   
   .section-heading {
-    @apply text-2xl font-semibold text-white mb-6;
+    @apply text-3xl font-semibold text-white mb-8;
   }
   
   .nav-link {
-    @apply text-white/70 hover:text-white transition-colors duration-300 flex items-center;
+    @apply text-white/70 hover:text-[#1EAEDB] transition-colors duration-300 text-lg flex items-center;
   }
   
   .link-highlight {
@@ -80,7 +81,7 @@
   }
   
   .skill-tag {
-    @apply inline-block px-2 py-0.5 rounded text-xs font-mono text-white bg-white/10 hover:bg-white/20 transition-colors;
+    @apply inline-block px-3 py-1 rounded text-sm font-mono text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors;
   }
 }
 
