@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Twitter, Instagram, BookMarked, ExternalLink } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
@@ -54,7 +53,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }, []);
   
   useEffect(() => {
-    // Check for hash in URL and scroll to section on initial load
     if (location.hash) {
       const id = location.hash.substring(1);
       const element = document.getElementById(id);
@@ -68,20 +66,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-navy text-slate">
-      {/* Sidebar - adjusted to 40% width */}
-      <aside className="lg:w-[40%] lg:h-screen px-6 py-8 lg:fixed lg:top-0 lg:left-0 flex flex-col justify-between z-10 pb-10">
-        <div className="mt-10">
-          <div className="mb-6">
+      <aside className="lg:w-[40%] lg:h-screen px-12 py-8 lg:fixed lg:top-0 lg:left-0 flex flex-col justify-between z-10">
+        <div className="mt-6">
+          <div className="mb-4">
             <h1 className="text-4xl font-semibold text-white mb-2">Hemali Suthar</h1>
-            <h2 className="text-xl text-white/80 mb-4">Data Analyst</h2>
-            <p className="text-slate mb-6">
+            <h2 className="text-xl text-white/80 mb-3">Data Analyst</h2>
+            <p className="text-slate mb-4">
               I see, play, analyze and visualize data to make right decisions.
             </p>
           </div>
           
           {isHome && (
             <nav className="hidden lg:block">
-              <ol className="flex flex-col space-y-2">
+              <ol className="flex flex-col space-y-1">
                 {navItems.map(({ name, url }, i) => (
                   <li key={i} className="nav-item">
                     <Link 
@@ -97,7 +94,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </nav>
           )}
         
-          <div className="mt-6">
+          <div className="mt-4">
             <div className="flex items-center space-x-4 mb-4">
               <a 
                 href="https://github.com/" 
@@ -149,39 +146,36 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </aside>
       
-      {/* Main Content - Adjusted to 60% width */}
       <main 
         ref={mainContentRef}
-        className="lg:ml-[40%] flex-1 lg:h-screen lg:overflow-y-auto custom-scrollbar pb-10"
+        className="lg:ml-[40%] flex-1 lg:h-screen lg:overflow-y-auto custom-scrollbar"
       >
-        <div className="max-w-3xl mx-auto px-6 py-10">
+        <div className="max-w-3xl mx-auto px-12 py-8">
           {children}
-        </div>
-        
-        {/* Mobile Nav */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-navy-shadow p-4 flex justify-around z-50 border-t border-lightest-navy">
-          {navItems.map(({ name, url }, i) => (
-            <Link 
-              key={i}
-              to={url} 
-              className={`flex flex-col items-center text-xs ${activeSection === url.substring(1) ? 'text-white' : 'text-white/70'}`}
-            >
-              <span>{name}</span>
-            </Link>
-          ))}
-          <a 
-            href="/resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex flex-col items-center text-xs text-white/70"
-          >
-            <ExternalLink size={12} className="mb-1" />
-            <span>Resume</span>
-          </a>
         </div>
       </main>
       
-      {/* Custom Cursor Effect */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-navy-shadow p-4 flex justify-around z-50 border-t border-lightest-navy">
+        {navItems.map(({ name, url }, i) => (
+          <Link 
+            key={i}
+            to={url} 
+            className={`flex flex-col items-center text-xs ${activeSection === url.substring(1) ? 'text-white' : 'text-white/70'}`}
+          >
+            <span>{name}</span>
+          </Link>
+        ))}
+        <a 
+          href="/resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex flex-col items-center text-xs text-white/70"
+        >
+          <ExternalLink size={12} className="mb-1" />
+          <span>Resume</span>
+        </a>
+      </div>
+      
       <div className="cursor-dot"></div>
       <div className="cursor-outline"></div>
     </div>

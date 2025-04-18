@@ -37,12 +37,14 @@ const Index = () => {
   
   return (
     <Layout>
-      <About />
-      <Experience />
-      <Education />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div className="space-y-16">
+        <About />
+        <Experience />
+        <Education />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </Layout>
   );
 };
