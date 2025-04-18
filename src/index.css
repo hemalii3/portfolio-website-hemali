@@ -55,7 +55,7 @@
   }
   
   .section-heading {
-    @apply text-2xl font-semibold text-white mb-6 mt-2;
+    @apply text-2xl font-semibold text-white mb-6;
   }
   
   .nav-link {
@@ -71,30 +71,12 @@
     position: relative;
   }
   
-  .inline-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 1);
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  }
-  
-  .inline-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  
   .button-link {
-    @apply px-2 py-1 text-white rounded font-mono text-sm hover:text-white/80 transition-all duration-300 flex items-center gap-2;
+    @apply text-white hover:text-white/80 transition-all duration-300 flex items-center gap-2 font-mono text-sm;
   }
   
-  .nav-item .nav-link.active .nav-line {
-    @apply w-16;
+  .nav-item .nav-link.active {
+    @apply text-white;
   }
   
   .skill-tag {

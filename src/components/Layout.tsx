@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Twitter, Instagram, BookMarked, ExternalLink } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
@@ -39,16 +40,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       setActiveSection(currentActive);
     };
     
-    const mainContent = mainContentRef.current;
-    if (mainContent) {
-      mainContent.addEventListener('scroll', handleScroll);
-      handleScroll(); // Initial check
-    }
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     
     return () => {
-      if (mainContent) {
-        mainContent.removeEventListener('scroll', handleScroll);
-      }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   
@@ -65,94 +61,84 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const isHome = location.pathname === '/';
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-navy text-slate">
-      <aside className="lg:w-[40%] lg:h-screen px-12 py-8 lg:fixed lg:top-0 lg:left-0 flex flex-col justify-between z-10">
-        <div className="mt-6">
-          <div className="mb-4">
-            <h1 className="text-4xl font-semibold text-white mb-2">Hemali Suthar</h1>
-            <h2 className="text-xl text-white/80 mb-3">Data Analyst</h2>
-            <p className="text-slate mb-4">
-              I see, play, analyze and visualize data to make right decisions.
-            </p>
-          </div>
+    <div className="min-h-screen bg-navy text-slate px-8 md:px-16 lg:px-24">
+      <header className="py-8 mb-8">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl font-semibold text-white mb-2">Hemali Suthar</h1>
+          <h2 className="text-xl text-white/80 mb-3">Data Analyst</h2>
+          <p className="text-slate mb-4">
+            I see, play, analyze and visualize data to make right decisions.
+          </p>
           
           {isHome && (
-            <nav className="hidden lg:block">
-              <ol className="flex flex-col space-y-1">
+            <nav className="flex items-center justify-between">
+              <ol className="flex space-x-6">
                 {navItems.map(({ name, url }, i) => (
                   <li key={i} className="nav-item">
                     <Link 
                       to={url} 
                       className={`nav-link flex items-center text-sm group transition-all duration-200 ${activeSection === url.substring(1) ? 'active text-white' : 'text-white/70'}`}
                     >
-                      <span className={`nav-line mr-4 h-px bg-white/70 transition-all duration-300 ${activeSection === url.substring(1) ? 'w-16' : 'w-8 group-hover:w-16'}`}></span>
                       <span className="hover:text-white transition-colors">{name}</span>
                     </Link>
                   </li>
                 ))}
               </ol>
+              
+              <div className="flex items-center space-x-4">
+                <a 
+                  href="https://github.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                  aria-label="GitHub"
+                >
+                  <Github size={20} />
+                </a>
+                <a 
+                  href="https://linkedin.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a 
+                  href="https://twitter.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                  aria-label="Twitter"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a 
+                  href="https://instagram.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://goodreads.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
+                  aria-label="Goodreads"
+                >
+                  <BookMarked size={18} strokeWidth={1.5} />
+                </a>
+              </div>
             </nav>
           )}
-        
-          <div className="mt-4">
-            <div className="flex items-center space-x-4 mb-4">
-              <a 
-                href="https://github.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-                aria-label="GitHub"
-              >
-                <Github size={20} />
-              </a>
-              <a 
-                href="https://linkedin.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a 
-                href="https://twitter.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a 
-                href="https://instagram.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="https://goodreads.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transform hover:-translate-y-1 transition-all duration-200"
-                aria-label="Goodreads"
-              >
-                <BookMarked size={18} strokeWidth={1.5} />
-              </a>
-            </div>
-          </div>
         </div>
-      </aside>
-      
-      <main 
-        ref={mainContentRef}
-        className="lg:ml-[40%] flex-1 lg:h-screen lg:overflow-y-auto custom-scrollbar"
-      >
-        <div className="max-w-3xl mx-auto px-12 py-8">
-          {children}
-        </div>
+      </header>
+
+      <main ref={mainContentRef} className="max-w-5xl mx-auto">
+        {children}
       </main>
       
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-navy-shadow p-4 flex justify-around z-50 border-t border-lightest-navy">
