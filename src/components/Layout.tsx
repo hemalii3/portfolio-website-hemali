@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Twitter, Instagram, BookMarked, ExternalLink } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
@@ -57,82 +58,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     }
   }, [location]);
   
-  const isHome = location.pathname === '/';
-
+  // Removed isHome logic and removed navbar rendering
+  
   return (
-    <div className="min-h-screen bg-navy text-slate px-12 md:px-24 lg:px-32">
-      <header className="py-12 mb-12">
+    <div className="min-h-screen bg-navy text-slate px-12 md:px-24 lg:px-32 text-lg"> {/* Increased base font size from default */}
+      <header className="py-12 mb-12 text-center">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-5xl font-semibold text-white mb-3">Hemali Suthar</h1>
-          <h2 className="text-2xl text-white/80 mb-4">Data Analyst</h2>
-          <p className="text-lg text-slate mb-6">
+          <h1 className="text-6xl font-semibold text-white mb-4">Hemali Suthar</h1> {/* Increased from text-5xl */}
+          <h2 className="text-3xl text-white/80 mb-6">Data Analyst</h2> {/* Increased from text-2xl */}
+          <p className="text-xl text-slate max-w-3xl mx-auto">
             I see, play, analyze and visualize data to make right decisions.
           </p>
           
-          {isHome && (
-            <nav className="flex items-center justify-between">
-              <ol className="flex space-x-8">
-                {navItems.map(({ name, url }, i) => (
-                  <li key={i} className="nav-item">
-                    <Link 
-                      to={url} 
-                      className={`nav-link text-lg flex items-center group transition-all duration-200 ${activeSection === url.substring(1) ? 'active text-[#1EAEDB]' : 'text-white/70'}`}
-                    >
-                      <span className="hover:text-[#1EAEDB] transition-colors">{name}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ol>
-              
-              <div className="flex items-center space-x-6">
-                <a 
-                  href="https://github.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#1EAEDB] transform hover:-translate-y-1 transition-all duration-200 text-2xl"
-                  aria-label="GitHub"
-                >
-                  <Github size={24} />
-                </a>
-                <a 
-                  href="https://linkedin.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#1EAEDB] transform hover:-translate-y-1 transition-all duration-200 text-2xl"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={24} />
-                </a>
-                <a 
-                  href="https://twitter.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#1EAEDB] transform hover:-translate-y-1 transition-all duration-200 text-2xl"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={24} />
-                </a>
-                <a 
-                  href="https://instagram.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#1EAEDB] transform hover:-translate-y-1 transition-all duration-200 text-2xl"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={24} />
-                </a>
-                <a 
-                  href="https://goodreads.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#1EAEDB] transform hover:-translate-y-1 transition-all duration-200 text-2xl"
-                  aria-label="Goodreads"
-                >
-                  <BookMarked size={18} strokeWidth={1.5} />
-                </a>
-              </div>
-            </nav>
-          )}
+          {/* Removed navigation bar and social icons from header */}
         </div>
       </header>
 
@@ -140,26 +78,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </main>
       
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-navy-shadow p-4 flex justify-around z-50 border-t border-lightest-navy">
-        {navItems.map(({ name, url }, i) => (
-          <Link 
-            key={i}
-            to={url} 
-            className={`flex flex-col items-center text-xs ${activeSection === url.substring(1) ? 'text-white' : 'text-white/70'}`}
-          >
-            <span>{name}</span>
-          </Link>
-        ))}
-        <a 
-          href="/resume.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex flex-col items-center text-xs text-white/70"
-        >
-          <ExternalLink size={12} className="mb-1" />
-          <span>Resume</span>
-        </a>
-      </div>
+      {/* Removed mobile bottom nav bar */}
       
       <div className="cursor-dot"></div>
       <div className="cursor-outline"></div>
@@ -168,3 +87,4 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default Layout;
+

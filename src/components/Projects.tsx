@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -102,7 +103,7 @@ const Projects = () => {
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
-            className="bg-light-navy/30 p-6 rounded-lg"
+            className="bg-light-navy/30 p-6 rounded-lg hover:bg-[#1EAEDB]/10 transition-colors duration-300"
           >
             <div className="grid grid-cols-12 gap-6 group">
               <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
@@ -115,13 +116,13 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-auto object-cover rounded"
+                    className="w-full h-auto object-cover rounded max-h-[180px]" /* Reduced max height */
                   />
                 </a>
               </div>
               
-              <div className="col-span-12 md:col-span-8">
-                <h3 className="flex items-center text-xl text-white font-semibold mb-3">
+              <div className="col-span-12 md:col-span-8 flex flex-col justify-between">
+                <h3 className="flex items-center text-2xl text-white font-semibold mb-3"> {/* Increased font size */}
                   <a 
                     href={project.link} 
                     target="_blank" 
@@ -130,37 +131,37 @@ const Projects = () => {
                   >
                     {project.title}
                   </a>
-                  <ExternalLink size={16} className="text-white/70" />
+                  <ExternalLink size={18} className="text-white/70" /> {/* Slightly larger icon */}
                 </h3>
                 
-                <p className="text-slate mb-4">{project.description}</p>
+                <p className="text-lg text-slate mb-4">{project.description}</p> {/* increased font size */}
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool) => (
-                    <span key={tool} className="text-xs px-3 py-1 rounded font-mono bg-light-navy text-lightest-slate">{tool}</span>
+                    <span key={tool} className="text-xs px-3 py-1 rounded font-mono text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors">{tool}</span>  /* Highlight skills in teal */
                   ))}
                 </div>
                 
-                <div className="flex gap-3 text-white/70">
+                <div className="flex gap-4 text-white/80">
                   {project.github && (
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-white transition-colors"
+                      className="hover:text-[#1EAEDB] transition-colors" /* Buttons and icons in teal on hover */
                       aria-label="GitHub Repository"
                     >
-                      <Github size={20} />
+                      <Github size={22} />
                     </a>
                   )}
                   <a 
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-[#1EAEDB] transition-colors"
                     aria-label="Live Project"
                   >
-                    <ExternalLink size={20} />
+                    <ExternalLink size={22} />
                   </a>
                 </div>
               </div>
@@ -172,7 +173,7 @@ const Projects = () => {
       <div className="text-center mt-12">
         <Link to="/projects" className="button-link inline-flex items-center group text-[#1EAEDB]">
           <span>View Full Project Archive</span>
-          <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+          <ExternalLink size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </section>
@@ -180,3 +181,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
