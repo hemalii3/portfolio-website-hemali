@@ -103,7 +103,7 @@ const Projects = () => {
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
-            className="bg-light-navy/30 p-6 rounded-lg hover:bg-[#1EAEDB]/10 transition-colors duration-300"
+            className="bg-light-navy/30 p-6 rounded-lg hover:bg-[#1EAEDB]/10 transition-colors duration-300 border border-transparent hover:border-[#1EAEDB]/30"
           >
             <div className="grid grid-cols-12 gap-6 group">
               <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
@@ -116,29 +116,29 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-auto object-cover rounded max-h-[180px]" /* Reduced max height */
+                    className="w-full h-auto object-cover rounded max-h-[160px]" /* Reduced max height */
                   />
                 </a>
               </div>
               
               <div className="col-span-12 md:col-span-8 flex flex-col justify-between">
-                <h3 className="flex items-center text-2xl text-white font-semibold mb-3"> {/* Increased font size */}
+                <h3 className="flex items-center text-2xl text-white font-semibold mb-3">
                   <a 
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-white/80 transition-colors mr-2 inline-link"
+                    className="hover:text-[#1EAEDB] transition-colors mr-2 inline-link"
                   >
                     {project.title}
                   </a>
-                  <ExternalLink size={18} className="text-white/70" /> {/* Slightly larger icon */}
+                  <ExternalLink size={20} className="text-[#1EAEDB]" />
                 </h3>
                 
-                <p className="text-lg text-slate mb-4">{project.description}</p> {/* increased font size */}
+                <p className="text-xl text-light-slate mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool) => (
-                    <span key={tool} className="text-xs px-3 py-1 rounded font-mono text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors">{tool}</span>  /* Highlight skills in teal */
+                    <span key={tool} className="text-sm px-3 py-1 rounded font-mono text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors border border-[#1EAEDB]/30">{tool}</span>
                   ))}
                 </div>
                 
@@ -148,7 +148,7 @@ const Projects = () => {
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-[#1EAEDB] transition-colors" /* Buttons and icons in teal on hover */
+                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
                       aria-label="GitHub Repository"
                     >
                       <Github size={22} />
@@ -158,7 +158,7 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-[#1EAEDB] transition-colors"
+                    className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
                     aria-label="Live Project"
                   >
                     <ExternalLink size={22} />
@@ -181,4 +181,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

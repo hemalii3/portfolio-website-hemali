@@ -43,8 +43,27 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
     
+    // Custom cursor implementation
+    const cursor = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+    
+    document.addEventListener('mousemove', (e) => {
+      if (cursor) {
+        (cursor as HTMLElement).style.left = `${e.clientX}px`;
+        (cursor as HTMLElement).style.top = `${e.clientY}px`;
+      }
+      
+      if (cursorOutline) {
+        setTimeout(() => {
+          (cursorOutline as HTMLElement).style.left = `${e.clientX}px`;
+          (cursorOutline as HTMLElement).style.top = `${e.clientY}px`;
+        }, 100);
+      }
+    });
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousemove', () => {});
     };
   }, []);
   
@@ -61,13 +80,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   // Removed isHome logic and removed navbar rendering
   
   return (
-    <div className="min-h-screen bg-navy text-slate px-12 md:px-24 lg:px-32 text-lg"> {/* Increased base font size from default */}
+    <div className="min-h-screen bg-navy text-light-slate px-12 md:px-24 lg:px-32 text-xl"> {/* Updated text color & increased font size */}
       <header className="py-12 mb-12 text-center">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl font-semibold text-white mb-4">Hemali Suthar</h1> {/* Increased from text-5xl */}
-          <h2 className="text-3xl text-white/80 mb-6">Data Analyst</h2> {/* Increased from text-2xl */}
-          <p className="text-xl text-slate max-w-3xl mx-auto">
-            I see, play, analyze and visualize data to make right decisions.
+          <h1 className="text-7xl font-semibold text-white mb-4">Hemali Suthar</h1> {/* Increased from text-6xl */}
+          <h2 className="text-4xl text-white/90 mb-6">Data Analyst</h2> {/* Increased from text-3xl */}
+          <p className="text-2xl text-light-slate max-w-3xl mx-auto">
+            I see, play, analyze and <span className="text-[#1EAEDB]">visualize</span> data to make <span className="text-[#1EAEDB]">right decisions</span>.
           </p>
           
           {/* Removed navigation bar and social icons from header */}
@@ -87,4 +106,3 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default Layout;
-

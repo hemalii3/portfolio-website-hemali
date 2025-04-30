@@ -13,9 +13,9 @@ const Index = () => {
     <Layout>
       <div className="space-y-24">
         <About />
-        <Experience />
-        <Education />
         <Projects />
+        <Education />
+        <Experience />
         <Contact />
         <Footer />
       </div>
@@ -24,4 +24,3 @@ const Index = () => {
 };
 
 export default Index;
-
