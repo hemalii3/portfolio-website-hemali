@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { Github, Linkedin, Twitter, Instagram, Book } from 'lucide-react';
 
 interface NavItem {
   name: string;
@@ -93,9 +94,58 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <h2 className="text-4xl text-white/90 mb-8">
             <span className="text-[#1EAEDB]">Data Analyst</span>
           </h2>
-          <p className="text-2xl text-light-slate max-w-3xl mx-auto">
+          <p className="text-2xl text-light-slate max-w-3xl mx-auto mb-6">
             I <span className="highlight-word">see</span>, <span className="highlight-word">play</span>, <span className="highlight-word">analyze</span> and <span className="highlight-word">visualize</span> data to make <span className="text-[#1EAEDB] font-semibold">right decisions</span>.
           </p>
+          
+          {/* Social media icons */}
+          <div className="flex justify-center space-x-6 mt-4">
+            <a 
+              href="https://github.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={24} />
+            </a>
+            <a 
+              href="https://linkedin.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={24} />
+            </a>
+            <a 
+              href="https://twitter.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              aria-label="Twitter"
+            >
+              <Twitter size={24} />
+            </a>
+            <a 
+              href="https://instagram.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={24} />
+            </a>
+            <a 
+              href="https://goodreads.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              aria-label="Goodreads"
+            >
+              <Book size={24} />
+            </a>
+          </div>
         </div>
       </header>
 
