@@ -29,16 +29,16 @@ const About = () => {
       
       <div className="grid grid-cols-1 gap-12">
         <div>
-          <div className="text-slate space-y-5 text-xl">
+          <div className="text-light-slate space-y-5 text-xl">
             <p>
               Hello! I'm <span className="highlight-word">Hemali</span>, a data analyst passionate about transforming raw data into 
-              actionable insights. My journey in the data world began during my computer science studies 
+              <span className="highlight-word"> actionable insights</span>. My journey in the data world began during my computer science studies 
               when I discovered the power of <span className="highlight-word">data-driven decision making</span>.
             </p>
             <p>
               I specialize in analyzing <span className="highlight-word">complex datasets</span>, creating insightful <span className="highlight-word">visualizations</span>, and 
               developing <span className="highlight-word">machine learning models</span> that help organizations make better strategic decisions. 
-              With a strong foundation in statistics and programming, I enjoy solving challenging problems 
+              With a strong foundation in <span className="highlight-word">statistics</span> and <span className="highlight-word">programming</span>, I enjoy solving challenging problems 
               and uncovering hidden patterns in data.
             </p>
             <p>
@@ -50,35 +50,35 @@ const About = () => {
           </div>
           
           <ul className="skills-list grid grid-cols-2 gap-x-4 gap-y-4 mt-8 mb-8">
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">Python (Pandas, NumPy)</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">SQL</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">Tableau</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">Power BI</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">Machine Learning</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">R</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">Data Visualization</span>
             </li>
-            <li className="flex items-center text-slate">
+            <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
               <span className="text-lg">Statistical Analysis</span>
             </li>

@@ -10,6 +10,7 @@ interface NavItem {
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [activeSection, setActiveSection] = useState<string>('');
   const [mounted, setMounted] = useState<boolean>(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: -100, y: -100 }); // Off-screen initially
   const mainContentRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   
@@ -35,39 +36,40 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
     
-    // Custom cursor implementation
-    const cursor = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-    
-    document.addEventListener('mousemove', (e) => {
-      if (cursor) {
-        (cursor as HTMLElement).style.left = `${e.clientX}px`;
-        (cursor as HTMLElement).style.top = `${e.clientY}px`;
-      }
-      
-      if (cursorOutline) {
-        setTimeout(() => {
-          (cursorOutline as HTMLElement).style.left = `${e.clientX}px`;
-          (cursorOutline as HTMLElement).style.top = `${e.clientY}px`;
-        }, 100);
-      }
-    });
+    // Enhanced cursor implementation
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
     
     // Add click effect to cursor
-    document.addEventListener('click', () => {
+    const handleMouseClick = () => {
+      const cursor = document.querySelector('.cursor-dot');
       if (cursor) {
         const cursorDot = cursor as HTMLElement;
         cursorDot.style.transform = 'translate(-50%, -50%) scale(0.8)';
         setTimeout(() => {
-          cursorDot.style.transform = '';
+          cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
         }, 150);
       }
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('click', handleMouseClick);
+    
+    // Show cursor when mouse enters the viewport
+    document.body.addEventListener('mouseenter', () => {
+      const cursor = document.querySelector('.cursor-dot');
+      const cursorOutline = document.querySelector('.cursor-outline');
+      
+      if (cursor) (cursor as HTMLElement).style.opacity = '1';
+      if (cursorOutline) (cursorOutline as HTMLElement).style.opacity = '1';
     });
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousemove', () => {});
-      document.removeEventListener('click', () => {});
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('click', handleMouseClick);
+      document.body.removeEventListener('mouseenter', () => {});
     };
   }, []);
   
@@ -101,8 +103,24 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </main>
       
-      <div className="cursor-dot"></div>
-      <div className="cursor-outline"></div>
+      {/* Improved custom cursor */}
+      <div 
+        className="cursor-dot z-[9999]"
+        style={{
+          left: `${cursorPosition.x}px`,
+          top: `${cursorPosition.y}px`,
+          opacity: mounted ? 1 : 0,
+        }}
+      ></div>
+      <div 
+        className="cursor-outline z-[9998]"
+        style={{
+          left: `${cursorPosition.x}px`,
+          top: `${cursorPosition.y}px`,
+          opacity: mounted ? 1 : 0,
+          transition: 'left 0.15s ease-out, top 0.15s ease-out, opacity 0.3s ease-in-out',
+        }}
+      ></div>
     </div>
   );
 };

@@ -11,9 +11,9 @@
     --light-navy: 217 33% 17%;
     --lightest-navy: 219 30% 23%;
     --navy-shadow: 220 47% 8%;
-    --slate: 225 20% 60%;
-    --light-slate: 225 30% 85%; /* Increased brightness from 75% to 85% */
-    --lightest-slate: 225 35% 95%; /* Increased brightness from 85% to 95% */
+    --slate: 225 20% 75%; /* Increased brightness from 60% to 75% */
+    --light-slate: 225 30% 90%; /* Increased brightness from 85% to 90% */
+    --lightest-slate: 225 35% 98%; /* Increased brightness from 95% to 98% */
     --white: 0 0% 100%;
     --accent: 0 0% 100%;
     --teal: 171 70% 50%;
@@ -26,7 +26,7 @@
   body {
     @apply bg-navy text-light-slate font-sans cursor-none md:cursor-none;
     font-feature-settings: "rlig" 1, "calt" 1;
-    font-size: 1.1rem; /* Increase base font size */
+    font-size: 1.2rem; /* Increased base font size from 1.1rem to 1.2rem */
   }
   
   html {
@@ -46,22 +46,22 @@
 
 @layer components {
   .cursor-dot {
-    @apply fixed top-0 left-0 w-4 h-4 bg-[#1EAEDB] rounded-full pointer-events-none z-[9999] block;
+    @apply fixed top-0 left-0 w-5 h-5 bg-[#1EAEDB] rounded-full pointer-events-none z-[9999] block;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s;
     animation: pulse-cursor 2s infinite alternate;
-    box-shadow: 0 0 15px rgba(30, 174, 219, 0.7); /* Add glow to cursor */
+    box-shadow: 0 0 20px rgba(30, 174, 219, 0.8); /* Enhanced glow for cursor */
   }
   
   .cursor-outline {
-    @apply fixed top-0 left-0 w-12 h-12 bg-transparent border-2 border-[#1EAEDB] rounded-full pointer-events-none z-[9998] block;
+    @apply fixed top-0 left-0 w-14 h-14 bg-transparent border-2 border-[#1EAEDB] rounded-full pointer-events-none z-[9998] block;
     transform: translate(-50%, -50%);
     transition: transform 0.2s;
-    animation: rotate-cursor 6s infinite linear; /* Add rotation animation */
+    animation: rotate-cursor 6s infinite linear;
   }
   
   .section-heading {
-    @apply text-4xl font-semibold text-white mb-8 relative; /* Increased from text-3xl */
+    @apply text-5xl font-semibold text-white mb-10 relative; /* Increased from text-4xl to text-5xl and mb-8 to mb-10 */
   }
   
   .section-heading::after {
@@ -82,16 +82,53 @@
     position: relative;
   }
   
+  /* New button style with underline animation */
   .button-link {
-    @apply text-[#1EAEDB] hover:text-white/80 transition-all duration-300 flex items-center gap-2 font-mono text-base bg-[#1EAEDB]/10 px-5 py-3 rounded-md border border-[#1EAEDB]/20 hover:bg-[#1EAEDB]/20;
-    /* Increased padding and enhanced style */
-    box-shadow: 0 4px 10px rgba(30, 174, 219, 0.1);
+    @apply text-[#1EAEDB] transition-all duration-300 flex items-center gap-2 font-mono text-lg relative px-5 py-3 rounded-md;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1EAEDB;
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+  }
+
+  .button-link:hover::after,
+  .button-link:focus::after {
+    transform: scaleX(1);
   }
   
   .button-outline {
-    @apply text-[#1EAEDB] hover:text-white transition-all duration-300 flex items-center gap-2 font-mono text-base bg-transparent px-5 py-3 rounded-md border border-[#1EAEDB] hover:bg-[#1EAEDB]/20;
-    /* Enhanced style */
-    box-shadow: 0 4px 10px rgba(30, 174, 219, 0.1);
+    @apply text-[#1EAEDB] hover:text-white transition-all duration-300 flex items-center gap-2 font-mono text-lg bg-transparent px-5 py-3 rounded-md relative;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-outline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1EAEDB;
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+  }
+
+  .button-outline:hover::after,
+  .button-outline:focus::after {
+    transform: scaleX(1);
   }
   
   .nav-item .nav-link.active {
@@ -99,8 +136,8 @@
   }
   
   .skill-tag {
-    @apply inline-block px-3 py-2 rounded text-sm font-mono text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors border border-[#1EAEDB]/30 mb-1;
-    /* Added border and increased padding */
+    @apply inline-block px-3 py-2 rounded text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors mb-1;
+    /* Removed border */
   }
 
   .highlight-word {

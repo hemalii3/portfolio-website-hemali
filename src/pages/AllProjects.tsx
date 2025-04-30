@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
-import { ExternalLink, Github, FolderGit2 } from 'lucide-react';
+import { ExternalLink, Github, Mail, Phone, MapPin } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -10,6 +10,7 @@ interface Project {
   tools: string[];
   link: string;
   github?: string;
+  image?: string;
 }
 
 const AllProjects = () => {
@@ -182,71 +183,139 @@ const AllProjects = () => {
   return (
     <Layout>
       <div className="py-10">
-        <h1 className="text-3xl text-lightest-slate font-bold mb-12">All Projects</h1>
+        <h1 className="text-4xl text-lightest-slate font-bold mb-12">All Projects</h1>
         
-        <p className="text-slate mb-16 max-w-2xl">
+        <p className="text-light-slate mb-16 max-w-2xl text-xl">
           A comprehensive archive of all the data science and analytics projects I've worked on. 
           Each project demonstrates different aspects of my skills in data analysis, visualization, 
           and machine learning.
         </p>
         
         <div 
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 transition-all duration-500 ${isMounted ? 'opacity-100' : 'opacity-0'}`}
+          className={`space-y-12 transition-all duration-500 ${isMounted ? 'opacity-100' : 'opacity-0'} mb-24`}
         >
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="bg-light-navy rounded-md p-6 flex flex-col h-full hover:-translate-y-2 transition-transform duration-200"
+              className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 border border-transparent hover:border-[#1EAEDB]/30 transform hover:-translate-y-1 hover:shadow-lg"
             >
-              <header className="flex justify-between items-start mb-6">
-                <FolderGit2 size={40} className="text-green" />
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-lightest-slate hover:text-green transition-colors"
-                      aria-label="GitHub Repository"
-                    >
-                      <Github size={18} />
-                    </a>
-                  )}
+              <div className="grid grid-cols-12 gap-8 group">
+                <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
                   <a 
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-lightest-slate hover:text-green transition-colors"
-                    aria-label="Live Project"
+                    className="block overflow-hidden rounded-lg border border-[#1EAEDB]/30"
                   >
-                    <ExternalLink size={18} />
+                    {project.image ? (
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-auto object-cover rounded transition-transform duration-500 group-hover:scale-105 max-h-[150px]" 
+                      />
+                    ) : (
+                      <div className="bg-[#1EAEDB]/5 h-[150px] w-full flex items-center justify-center">
+                        <span className="text-[#1EAEDB] text-lg">No Preview Available</span>
+                      </div>
+                    )}
                   </a>
                 </div>
-              </header>
-              
-              <h3 className="text-lightest-slate text-xl font-medium mb-2">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-green transition-colors"
-                >
-                  {project.title}
-                </a>
-              </h3>
-              
-              <p className="text-slate mb-6 flex-grow">{project.description}</p>
-              
-              <footer>
-                <ul className="flex flex-wrap gap-2 text-xs font-mono text-slate">
-                  {project.tools.map((tool) => (
-                    <li key={tool}>{tool}</li>
-                  ))}
-                </ul>
-              </footer>
+                
+                <div className="col-span-12 md:col-span-8 flex flex-col justify-between">
+                  <h3 className="flex items-center text-2xl text-white font-semibold mb-3">
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-[#1EAEDB] transition-colors mr-2 inline-link"
+                    >
+                      {project.title}
+                    </a>
+                    <ExternalLink size={20} className="text-[#1EAEDB]" />
+                  </h3>
+                  
+                  <p className="text-xl text-light-slate mb-4">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tools.map((tool) => (
+                      <span key={tool} className="text-[#1EAEDB]">{tool}</span>
+                    ))}
+                  </div>
+                  
+                  <div className="flex gap-4 text-white/80">
+                    {project.github && (
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
+                        aria-label="GitHub Repository"
+                      >
+                        <Github size={22} />
+                      </a>
+                    )}
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
+                      aria-label="Live Project"
+                    >
+                      <ExternalLink size={22} />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+        
+        {/* Contact Section */}
+        <section id="contact" className="transition-opacity duration-500 opacity-100 mt-16 mb-12">
+          <h2 className="section-heading">Get In Touch</h2>
+          
+          <div className="text-center max-w-xl mx-auto">
+            <p className="text-light-slate mb-8 text-xl">
+              I'm currently looking for new opportunities. Whether you have a question or just want to say hello, 
+              I'll do my best to get back to you!
+            </p>
+            
+            <div className="space-y-6 text-left mb-10 bg-light-navy/30 p-8 rounded-lg border border-[#1EAEDB]/30 hover:border-[#1EAEDB]/60 transition-all duration-300 hover:shadow-lg">
+              <div className="flex items-center">
+                <Mail size={22} className="text-[#1EAEDB] mr-4" />
+                <a 
+                  href="mailto:hemalisuthar.work@gmail.com" 
+                  className="text-white hover:text-[#1EAEDB] transition-colors inline-link text-xl"
+                >
+                  hemalisuthar.work@gmail.com
+                </a>
+              </div>
+              
+              <div className="flex items-center">
+                <Phone size={22} className="text-[#1EAEDB] mr-4" />
+                <a 
+                  href="tel:+43 6677897979" 
+                  className="text-white hover:text-[#1EAEDB] transition-colors inline-link text-xl"
+                >
+                  +43 6677897979
+                </a>
+              </div>
+              
+              <div className="flex items-center">
+                <MapPin size={22} className="text-[#1EAEDB] mr-4" />
+                <span className="text-white text-xl">Vienna, Austria</span>
+              </div>
+            </div>
+            
+            <a 
+              href="mailto:hemalisuthar.work@gmail.com" 
+              className="button-link inline-flex items-center group text-lg font-semibold"
+            >
+              <span>Say Hello</span>
+              <ExternalLink size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </section>
       </div>
     </Layout>
   );

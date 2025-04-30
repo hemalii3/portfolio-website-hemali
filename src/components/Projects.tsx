@@ -121,7 +121,7 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool) => (
-                    <span key={tool} className="skill-tag">{tool}</span>
+                    <span key={tool} className="text-[#1EAEDB]">{tool}</span>
                   ))}
                 </div>
                 
