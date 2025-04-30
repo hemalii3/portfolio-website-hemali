@@ -75,23 +75,6 @@ const Projects = () => {
       github: "https://github.com/user/project4",
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop",
       featured: true
-    },
-    {
-      id: 5,
-      title: "Market Basket Analysis",
-      description: "Implemented association rule mining algorithms to analyze transaction records, discovering hidden purchase patterns that increased average order value by 18%.",
-      tools: ["Python", "Pandas", "Apriori Algorithm"],
-      link: "https://example.com/project5",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Social Media Sentiment Analysis",
-      description: "Built a sophisticated NLP system that processed social media posts to extract sentiment patterns, enabling brands to respond proactively to emerging reputation issues.",
-      tools: ["Python", "NLP", "NLTK", "SpaCy"],
-      link: "https://example.com/project6",
-      github: "https://github.com/user/project6",
-      featured: false
     }
   ];
   
@@ -103,20 +86,20 @@ const Projects = () => {
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
-            className="bg-light-navy/30 p-6 rounded-lg hover:bg-[#1EAEDB]/10 transition-colors duration-300 border border-transparent hover:border-[#1EAEDB]/30"
+            className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 border border-transparent hover:border-[#1EAEDB]/30 transform hover:-translate-y-1 hover:shadow-lg"
           >
-            <div className="grid grid-cols-12 gap-6 group">
+            <div className="grid grid-cols-12 gap-8 group">
               <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
                 <a 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block"
+                  className="block overflow-hidden rounded-lg border border-[#1EAEDB]/30"
                 >
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-auto object-cover rounded max-h-[160px]" /* Reduced max height */
+                    className="w-full h-auto object-cover rounded transition-transform duration-500 group-hover:scale-105 max-h-[150px]" 
                   />
                 </a>
               </div>
@@ -138,7 +121,7 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool) => (
-                    <span key={tool} className="text-sm px-3 py-1 rounded font-mono text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors border border-[#1EAEDB]/30">{tool}</span>
+                    <span key={tool} className="skill-tag">{tool}</span>
                   ))}
                 </div>
                 
@@ -148,7 +131,7 @@ const Projects = () => {
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
+                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
                       aria-label="GitHub Repository"
                     >
                       <Github size={22} />
@@ -158,7 +141,7 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
+                    className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
                     aria-label="Live Project"
                   >
                     <ExternalLink size={22} />
@@ -171,7 +154,7 @@ const Projects = () => {
       </div>
       
       <div className="text-center mt-12">
-        <Link to="/projects" className="button-link inline-flex items-center group text-[#1EAEDB]">
+        <Link to="/projects" className="button-link inline-flex items-center group text-[#1EAEDB] font-semibold text-lg">
           <span>View Full Project Archive</span>
           <ExternalLink size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>
