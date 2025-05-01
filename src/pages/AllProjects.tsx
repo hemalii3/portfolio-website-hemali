@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
-import { ExternalLink, Github, Mail, Phone, MapPin, Book, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { ExternalLink, Github, Mail, Phone, MapPin, Book, Linkedin, Twitter, Instagram, ArrowLeft } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -184,7 +185,22 @@ const AllProjects = () => {
   return (
     <Layout>
       <div className="py-10">
-        <h1 className="text-4xl text-lightest-slate font-bold mb-12">All Projects</h1>
+        {/* Back navigation arrow */}
+        <Link to="/" className="flex items-center text-light-slate mb-4 hover:text-[#1EAEDB] transition-colors inline-flex">
+          <ArrowLeft size={20} className="mr-2" />
+          <span>Back to Home</span>
+        </Link>
+        
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+          <h1 className="text-4xl text-lightest-slate font-bold">All Projects</h1>
+          <div className="w-full md:w-48 h-auto overflow-hidden rounded-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+              alt="Projects" 
+              className="w-full h-auto object-cover" 
+            />
+          </div>
+        </div>
         
         <p className="text-light-slate mb-16 max-w-2xl text-xl">
           A comprehensive archive of all the data science and analytics projects I've worked on. 
