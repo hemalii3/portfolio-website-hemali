@@ -95,6 +95,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
          style={{ opacity: contentVisible ? 1 : 0 }}>
       <header className="py-14 mb-14 text-center">
         <div className="max-w-5xl mx-auto">
+          <div className="flex justify-center mb-4">
+            <img 
+              src="/lovable-uploads/50fc388e-2487-4c7b-97ad-247c1fd804d4.png" 
+              alt="HS Logo" 
+              className="w-20 h-20 object-contain"
+            />
+          </div>
           <h1 className="text-7xl font-semibold text-white mb-4">
             Hemali Suthar
           </h1>

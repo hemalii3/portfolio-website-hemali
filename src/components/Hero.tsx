@@ -16,12 +16,17 @@ const Hero = () => {
     <section id="hero" className="min-h-[60vh] flex flex-col justify-center">
       <div>
         <div className="space-y-5">
-          <p 
+          <div 
             style={{ transitionDelay: '100ms' }}
-            className={`font-mono text-green transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
+            className={`flex items-center gap-4 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
           >
-            Hi, my name is
-          </p>
+            <img 
+              src="/lovable-uploads/50fc388e-2487-4c7b-97ad-247c1fd804d4.png" 
+              alt="HS Logo" 
+              className="w-12 h-12 object-contain"
+            />
+            <p className="font-mono text-green">Hi, my name is</p>
+          </div>
           
           <h1 
             style={{ transitionDelay: '200ms' }}

@@ -27,11 +27,11 @@ const App = () => {
     metaKeywords.content = 'Data Analyst, Data Science, Portfolio, Hemali Suthar, Data Visualization, Analytics';
     document.head.appendChild(metaKeywords);
     
-    // Add favicon
+    // Add custom favicon
     const favicon = document.createElement('link');
     favicon.rel = 'icon';
-    favicon.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>HS</text></svg>';
-    favicon.type = 'image/svg+xml';
+    favicon.href = '/lovable-uploads/50fc388e-2487-4c7b-97ad-247c1fd804d4.png';
+    favicon.type = 'image/png';
     document.head.appendChild(favicon);
     
     // Clean up on unmount
