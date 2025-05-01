@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink, Github, Linkedin, Twitter, Instagram, Book } from 'lucide-react';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +34,7 @@ const Contact = () => {
           I'll do my best to get back to you!
         </p>
         
-        <div className="space-y-6 text-left mb-10 bg-light-navy/30 p-8 rounded-lg border border-[#1EAEDB]/30 hover:border-[#1EAEDB]/60 transition-all duration-300 hover:shadow-lg">
+        <div className="space-y-6 text-left mb-10 bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 hover:shadow-lg">
           <div className="flex items-center">
             <Mail size={22} className="text-[#1EAEDB] mr-4" />
             <a 
@@ -59,6 +59,55 @@ const Contact = () => {
             <MapPin size={22} className="text-[#1EAEDB] mr-4" />
             <span className="text-white text-xl">Vienna, Austria</span>
           </div>
+        </div>
+        
+        {/* Social media icons */}
+        <div className="flex justify-center space-x-6 mb-8">
+          <a 
+            href="https://github.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+            aria-label="GitHub"
+          >
+            <Github size={24} />
+          </a>
+          <a 
+            href="https://linkedin.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={24} />
+          </a>
+          <a 
+            href="https://twitter.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+            aria-label="Twitter"
+          >
+            <Twitter size={24} />
+          </a>
+          <a 
+            href="https://instagram.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram size={24} />
+          </a>
+          <a 
+            href="https://goodreads.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+            aria-label="Goodreads"
+          >
+            <Book size={24} />
+          </a>
         </div>
         
         <a 

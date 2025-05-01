@@ -16,6 +16,7 @@ interface Project {
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [focusedProjectId, setFocusedProjectId] = useState<number | null>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,6 +76,16 @@ const Projects = () => {
       github: "https://github.com/user/project4",
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop",
       featured: true
+    },
+    {
+      id: 5,
+      title: "Data Analysis Dashboard",
+      description: "An interactive dashboard for visualizing complex datasets with customizable filters and real-time updates.",
+      tools: ["React", "D3.js", "Python", "Flask"],
+      link: "https://example.com/project5",
+      github: "https://github.com/user/project5",
+      image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop",
+      featured: true
     }
   ];
   
@@ -86,7 +97,9 @@ const Projects = () => {
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
-            className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 border border-transparent hover:border-[#1EAEDB]/30 transform hover:-translate-y-1 hover:shadow-lg"
+            className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            onMouseEnter={() => setFocusedProjectId(project.id)}
+            onMouseLeave={() => setFocusedProjectId(null)}
           >
             <div className="grid grid-cols-12 gap-8 group">
               <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
@@ -94,7 +107,7 @@ const Projects = () => {
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-lg border border-[#1EAEDB]/30"
+                  className="block overflow-hidden rounded-lg"
                 >
                   <img 
                     src={project.image} 
@@ -131,7 +144,7 @@ const Projects = () => {
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
+                      className={`transition-all duration-300 bg-[#1EAEDB]/10 p-2 rounded-full ${focusedProjectId === project.id ? 'text-[#1EAEDB] scale-110' : 'text-white/80 hover:text-[#1EAEDB]'}`}
                       aria-label="GitHub Repository"
                     >
                       <Github size={22} />
@@ -141,7 +154,7 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
+                    className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
                     aria-label="Live Project"
                   >
                     <ExternalLink size={22} />

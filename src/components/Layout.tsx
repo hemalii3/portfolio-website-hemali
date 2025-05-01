@@ -11,12 +11,18 @@ interface NavItem {
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [activeSection, setActiveSection] = useState<string>('');
   const [mounted, setMounted] = useState<boolean>(false);
+  const [contentVisible, setContentVisible] = useState<boolean>(false);
   const [cursorPosition, setCursorPosition] = useState({ x: -100, y: -100 }); // Off-screen initially
   const mainContentRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   
   useEffect(() => {
     setMounted(true);
+    
+    // Fade in main content
+    setTimeout(() => {
+      setContentVisible(true);
+    }, 300);
     
     const handleScroll = () => {
       if (!mainContentRef.current) return;
@@ -85,7 +91,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }, [location]);
   
   return (
-    <div className="min-h-screen bg-navy text-light-slate px-12 md:px-24 lg:px-32 text-xl">
+    <div className="min-h-screen bg-navy text-light-slate px-12 md:px-24 lg:px-32 text-xl transition-opacity duration-700 ease-in-out"
+         style={{ opacity: contentVisible ? 1 : 0 }}>
       <header className="py-14 mb-14 text-center">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-7xl font-semibold text-white mb-4">

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
-import { ExternalLink, Github, Mail, Phone, MapPin } from 'lucide-react';
+import { ExternalLink, Github, Mail, Phone, MapPin, Book, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -15,6 +15,7 @@ interface Project {
 
 const AllProjects = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [focusedProjectId, setFocusedProjectId] = useState<number | null>(null);
   
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -197,7 +198,9 @@ const AllProjects = () => {
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 border border-transparent hover:border-[#1EAEDB]/30 transform hover:-translate-y-1 hover:shadow-lg"
+              className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              onMouseEnter={() => setFocusedProjectId(project.id)}
+              onMouseLeave={() => setFocusedProjectId(null)}
             >
               <div className="grid grid-cols-12 gap-8 group">
                 <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
@@ -205,7 +208,7 @@ const AllProjects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block overflow-hidden rounded-lg border border-[#1EAEDB]/30"
+                    className="block overflow-hidden rounded-lg"
                   >
                     {project.image ? (
                       <img 
@@ -248,7 +251,7 @@ const AllProjects = () => {
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
+                        className={`transition-all duration-300 bg-[#1EAEDB]/10 p-2 rounded-full ${focusedProjectId === project.id ? 'text-[#1EAEDB] scale-110' : 'text-white/80 hover:text-[#1EAEDB]'}`}
                         aria-label="GitHub Repository"
                       >
                         <Github size={22} />
@@ -258,7 +261,7 @@ const AllProjects = () => {
                       href={project.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full border border-[#1EAEDB]/30 hover:border-[#1EAEDB]"
+                      className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
                       aria-label="Live Project"
                     >
                       <ExternalLink size={22} />
@@ -280,7 +283,7 @@ const AllProjects = () => {
               I'll do my best to get back to you!
             </p>
             
-            <div className="space-y-6 text-left mb-10 bg-light-navy/30 p-8 rounded-lg border border-[#1EAEDB]/30 hover:border-[#1EAEDB]/60 transition-all duration-300 hover:shadow-lg">
+            <div className="space-y-6 text-left mb-10 bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 hover:shadow-lg">
               <div className="flex items-center">
                 <Mail size={22} className="text-[#1EAEDB] mr-4" />
                 <a 
@@ -305,6 +308,55 @@ const AllProjects = () => {
                 <MapPin size={22} className="text-[#1EAEDB] mr-4" />
                 <span className="text-white text-xl">Vienna, Austria</span>
               </div>
+            </div>
+            
+            {/* Social media icons */}
+            <div className="flex justify-center space-x-6 mb-8">
+              <a 
+                href="https://github.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={24} />
+              </a>
+              <a 
+                href="https://linkedin.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a 
+                href="https://twitter.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter size={24} />
+              </a>
+              <a 
+                href="https://instagram.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} />
+              </a>
+              <a 
+                href="https://goodreads.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+                aria-label="Goodreads"
+              >
+                <Book size={24} />
+              </a>
             </div>
             
             <a 
