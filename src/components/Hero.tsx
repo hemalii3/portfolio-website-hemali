@@ -20,11 +20,6 @@ const Hero = () => {
             style={{ transitionDelay: '100ms' }}
             className={`flex items-center gap-4 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
           >
-            <img 
-              src="/lovable-uploads/50fc388e-2487-4c7b-97ad-247c1fd804d4.png" 
-              alt="HS Logo" 
-              className="w-12 h-12 object-contain"
-            />
             <p className="font-mono text-green">Hi, my name is</p>
           </div>
           
