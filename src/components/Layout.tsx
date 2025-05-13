@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Instagram, Book } from 'lucide-react';
@@ -97,20 +98,20 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-navy text-light-slate px-4 sm:px-8 md:px-16 lg:px-32 text-base sm:text-lg md:text-xl transition-opacity duration-700 ease-in-out"
          style={{ opacity: contentVisible ? 1 : 0 }}>
-      <header className="py-8 md:py-14 mb-8 md:mb-14 text-center">
+      <header className="py-6 md:py-14 mb-6 md:mb-14 text-center">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-semibold text-white mb-2 sm:mb-4">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-semibold text-white mb-1 sm:mb-4">
             Hemali Suthar
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-white/90 mb-4 sm:mb-8">
+          <h2 className="text-xl sm:text-3xl md:text-4xl text-white/90 mb-3 sm:mb-8">
             <span className="text-[#1EAEDB]">Data Analyst</span>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-light-slate max-w-3xl mx-auto mb-4 sm:mb-6 px-4">
+          <p className="text-base sm:text-xl md:text-2xl text-light-slate max-w-3xl mx-auto mb-3 sm:mb-6 px-3 sm:px-4">
             I <span className="highlight-word">see</span>, <span className="highlight-word">play</span>, <span className="highlight-word">analyze</span> and <span className="highlight-word">visualize</span> data to make <span className="text-[#1EAEDB] font-semibold">right decisions</span>.
           </p>
           
           {/* Social media icons */}
-          <div className="flex justify-center space-x-4 sm:space-x-6 mt-4">
+          <div className="flex justify-center space-x-3 sm:space-x-6 mt-3 sm:mt-4">
             <a 
               href="https://github.com/" 
               target="_blank" 
@@ -118,7 +119,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               className="text-light-slate hover:text-[#1EAEDB] transition-colors"
               aria-label="GitHub"
             >
-              <Github size={isMobile ? 20 : 24} />
+              <Github size={isMobile ? 18 : 24} />
             </a>
             <a 
               href="https://linkedin.com/" 
@@ -127,7 +128,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               className="text-light-slate hover:text-[#1EAEDB] transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin size={isMobile ? 20 : 24} />
+              <Linkedin size={isMobile ? 18 : 24} />
             </a>
             <a 
               href="https://twitter.com/" 
@@ -136,7 +137,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               className="text-light-slate hover:text-[#1EAEDB] transition-colors"
               aria-label="Twitter"
             >
-              <Twitter size={isMobile ? 20 : 24} />
+              <Twitter size={isMobile ? 18 : 24} />
             </a>
             <a 
               href="https://instagram.com/" 
@@ -145,7 +146,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               className="text-light-slate hover:text-[#1EAEDB] transition-colors"
               aria-label="Instagram"
             >
-              <Instagram size={isMobile ? 20 : 24} />
+              <Instagram size={isMobile ? 18 : 24} />
             </a>
             <a 
               href="https://goodreads.com/" 
@@ -154,7 +155,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               className="text-light-slate hover:text-[#1EAEDB] transition-colors"
               aria-label="Goodreads"
             >
-              <Book size={isMobile ? 20 : 24} />
+              <Book size={isMobile ? 18 : 24} />
             </a>
           </div>
         </div>

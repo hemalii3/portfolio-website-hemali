@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Calibre:wght@400;500;600&display=swap');
 
 @tailwind base;
@@ -26,6 +27,13 @@
     @apply bg-navy text-light-slate font-sans cursor-none md:cursor-none;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-size: 1.2rem;
+  }
+  
+  /* Improved responsive font sizing */
+  @media (max-width: 640px) {
+    body {
+      font-size: 1rem;
+    }
   }
   
   html {
@@ -63,6 +71,13 @@
     @apply text-5xl font-semibold text-white mb-10 relative;
   }
   
+  /* Responsive section heading */
+  @media (max-width: 640px) {
+    .section-heading {
+      @apply text-4xl mb-6;
+    }
+  }
+  
   /* Removing the underline from section headings */
   .section-heading::after {
     content: none;
@@ -70,6 +85,13 @@
   
   .nav-link {
     @apply text-white/70 hover:text-[#1EAEDB] transition-colors duration-300 text-lg flex items-center;
+  }
+  
+  /* Smaller nav links on mobile */
+  @media (max-width: 640px) {
+    .nav-link {
+      @apply text-base;
+    }
   }
   
   .link-highlight {
@@ -86,6 +108,13 @@
     @apply text-[#1EAEDB] transition-all duration-300 flex items-center gap-2 font-mono text-lg relative px-5 py-3 rounded-md;
     position: relative;
     overflow: hidden;
+  }
+
+  /* Smaller button text on mobile */
+  @media (max-width: 640px) {
+    .button-link {
+      @apply text-base px-4 py-2;
+    }
   }
 
   .button-link::after {
@@ -112,6 +141,13 @@
     overflow: hidden;
   }
 
+  /* Smaller outline button on mobile */
+  @media (max-width: 640px) {
+    .button-outline {
+      @apply text-base px-4 py-2;
+    }
+  }
+
   .button-outline::after {
     content: '';
     position: absolute;
@@ -136,6 +172,13 @@
   
   .skill-tag {
     @apply inline-block px-3 py-2 rounded text-[#1EAEDB] bg-[#1EAEDB]/10 hover:bg-[#1EAEDB]/20 transition-colors mb-1;
+  }
+
+  /* Smaller skill tags on mobile */
+  @media (max-width: 640px) {
+    .skill-tag {
+      @apply px-2 py-1 text-sm;
+    }
   }
 
   .highlight-word {
