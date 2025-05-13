@@ -96,7 +96,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }, [location]);
   
   return (
-    <div className="min-h-screen bg-navy text-light-slate px-4 sm:px-8 md:px-16 lg:px-32 text-base sm:text-lg md:text-xl transition-opacity duration-700 ease-in-out"
+    <div className="min-h-screen bg-navy text-light-slate max-w-[100vw] overflow-x-hidden px-3 sm:px-6 md:px-12 lg:px-24 text-base sm:text-lg md:text-xl transition-opacity duration-700 ease-in-out"
          style={{ opacity: contentVisible ? 1 : 0 }}>
       <header className="py-6 md:py-14 mb-6 md:mb-14 text-center">
         <div className="max-w-5xl mx-auto">
@@ -161,7 +161,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </header>
 
-      <main ref={mainContentRef} className="max-w-5xl mx-auto">
+      <main ref={mainContentRef} className="max-w-5xl mx-auto px-2">
         {children}
       </main>
       
