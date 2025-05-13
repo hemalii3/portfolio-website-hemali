@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Instagram, Book } from 'lucide-react';
@@ -100,13 +99,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
          style={{ opacity: contentVisible ? 1 : 0 }}>
       <header className="py-8 md:py-14 mb-8 md:mb-14 text-center">
         <div className="max-w-5xl mx-auto">
-          <div className="flex justify-center mb-4">
-            <img 
-              src="/lovable-uploads/e701160d-f2ca-45ed-96e2-a1fb988aa954.png" 
-              alt="HS Logo" 
-              className="w-16 sm:w-20 h-16 sm:h-20 object-contain"
-            />
-          </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-semibold text-white mb-2 sm:mb-4">
             Hemali Suthar
           </h1>
