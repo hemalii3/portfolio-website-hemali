@@ -93,16 +93,16 @@ const Projects = () => {
     <section id="projects" className={`mb-24 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <h2 className="section-heading">Projects</h2>
       
-      <div className="space-y-12 mt-10">
+      <div className="space-y-8 sm:space-y-12 mt-6 sm:mt-10">
         {projects.filter(p => p.featured).map((project) => (
           <div 
             key={project.id}
-            className="bg-light-navy/30 p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            className="bg-light-navy/30 p-4 sm:p-6 md:p-8 rounded-lg hover:bg-[#1EAEDB]/10 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
             onMouseEnter={() => setFocusedProjectId(project.id)}
             onMouseLeave={() => setFocusedProjectId(null)}
           >
-            <div className="grid grid-cols-12 gap-8 group">
-              <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 group">
+              <div className="md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
                 <a 
                   href={project.link} 
                   target="_blank" 
@@ -112,13 +112,13 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-auto object-cover rounded transition-transform duration-500 group-hover:scale-105 max-h-[150px]" 
+                    className="w-full h-auto object-cover rounded transition-transform duration-500 group-hover:scale-105 max-h-[120px] sm:max-h-[150px]" 
                   />
                 </a>
               </div>
               
-              <div className="col-span-12 md:col-span-8 flex flex-col justify-between">
-                <h3 className="flex items-center text-2xl text-white font-semibold mb-3">
+              <div className="md:col-span-8 flex flex-col justify-between">
+                <h3 className="flex items-start sm:items-center text-xl sm:text-2xl text-white font-semibold mb-2 sm:mb-3">
                   <a 
                     href={project.link} 
                     target="_blank" 
@@ -127,18 +127,18 @@ const Projects = () => {
                   >
                     {project.title}
                   </a>
-                  <ExternalLink size={20} className="text-[#1EAEDB]" />
+                  <ExternalLink size={18} className="text-[#1EAEDB] mt-1 sm:mt-0" />
                 </h3>
                 
-                <p className="text-xl text-light-slate mb-4">{project.description}</p>
+                <p className="text-base sm:text-lg md:text-xl text-light-slate mb-3 sm:mb-4">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                   {project.tools.map((tool) => (
-                    <span key={tool} className="text-[#1EAEDB]">{tool}</span>
+                    <span key={tool} className="text-[#1EAEDB] text-sm sm:text-base">{tool}</span>
                   ))}
                 </div>
                 
-                <div className="flex gap-4 text-white/80">
+                <div className="flex gap-3 sm:gap-4 text-white/80">
                   {project.github && (
                     <a 
                       href={project.github} 
@@ -147,7 +147,7 @@ const Projects = () => {
                       className={`transition-all duration-300 bg-[#1EAEDB]/10 p-2 rounded-full ${focusedProjectId === project.id ? 'text-[#1EAEDB] scale-110' : 'text-white/80 hover:text-[#1EAEDB]'}`}
                       aria-label="GitHub Repository"
                     >
-                      <Github size={22} />
+                      <Github size={20} />
                     </a>
                   )}
                   <a 
@@ -157,7 +157,7 @@ const Projects = () => {
                     className="hover:text-[#1EAEDB] transition-colors bg-[#1EAEDB]/10 p-2 rounded-full"
                     aria-label="Live Project"
                   >
-                    <ExternalLink size={22} />
+                    <ExternalLink size={20} />
                   </a>
                 </div>
               </div>
@@ -166,10 +166,10 @@ const Projects = () => {
         ))}
       </div>
       
-      <div className="text-center mt-12">
-        <Link to="/projects" className="button-link inline-flex items-center group text-[#1EAEDB] font-semibold text-lg">
+      <div className="text-center mt-8 sm:mt-12">
+        <Link to="/projects" className="button-link inline-flex items-center group text-[#1EAEDB] font-semibold text-base sm:text-lg">
           <span>View Full Project Archive</span>
-          <ExternalLink size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />
+          <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </section>
