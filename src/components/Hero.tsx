@@ -41,9 +41,7 @@ const Hero = () => {
             style={{ transitionDelay: '400ms' }}
             className={`text-base sm:text-lg text-slate max-w-xl mt-4 sm:mt-6 transition-all duration-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'}`}
           >
-            I see, play, analyze, and visualize data to make the right decisions. 
-            Currently focused on building insightful dashboards and extracting meaningful insights
-            that drive business value.
+            I create webpages and work with data to make decisions. I know my way to make things work.
           </p>
           
           <div 
