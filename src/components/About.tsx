@@ -46,23 +46,7 @@ const About = () => {
           <ul className="skills-list grid grid-cols-2 gap-x-4 gap-y-4 mt-8 mb-8">
             <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">Python (Pandas, NumPy)</span>
-            </li>
-            <li className="flex items-center text-light-slate">
-              <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">SQL</span>
-            </li>
-            <li className="flex items-center text-light-slate">
-              <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">Tableau</span>
-            </li>
-            <li className="flex items-center text-light-slate">
-              <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">Power BI</span>
-            </li>
-            <li className="flex items-center text-light-slate">
-              <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">Machine Learning</span>
+              <span className="text-lg">Python</span>
             </li>
             <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
@@ -70,11 +54,27 @@ const About = () => {
             </li>
             <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">Data Visualization</span>
+              <span className="text-lg">SQL</span>
             </li>
             <li className="flex items-center text-light-slate">
               <span className="text-[#1EAEDB] mr-2">▹</span>
-              <span className="text-lg">Statistical Analysis</span>
+              <span className="text-lg">Power BI</span>
+            </li>
+            <li className="flex items-center text-light-slate">
+              <span className="text-[#1EAEDB] mr-2">▹</span>
+              <span className="text-lg">React JS</span>
+            </li>
+            <li className="flex items-center text-light-slate">
+              <span className="text-[#1EAEDB] mr-2">▹</span>
+              <span className="text-lg">PHP</span>
+            </li>
+            <li className="flex items-center text-light-slate">
+              <span className="text-[#1EAEDB] mr-2">▹</span>
+              <span className="text-lg">Vue JS</span>
+            </li>
+            <li className="flex items-center text-light-slate">
+              <span className="text-[#1EAEDB] mr-2">▹</span>
+              <span className="text-lg">Next JS</span>
             </li>
           </ul>
           
