@@ -38,10 +38,10 @@ const Contact = () => {
           <div className="flex items-center">
             <Mail size={22} className="text-[#1EAEDB] mr-4" />
             <a 
-              href="mailto:hemalisuthar.work@gmail.com" 
+              href="mailto:contact.hemali3@gmail.com" 
               className="text-white hover:text-[#1EAEDB] transition-colors inline-link text-xl"
             >
-              hemalisuthar.work@gmail.com
+              contact.hemali3@gmail.com
             </a>
           </div>
           
@@ -111,7 +111,7 @@ const Contact = () => {
         </div>
         
         <a 
-          href="mailto:hemalisuthar.work@gmail.com" 
+          href="mailto:contact.hemali3@gmail.com" 
           className="button-link inline-flex items-center group text-lg font-semibold"
         >
           <span>Say Hello</span>

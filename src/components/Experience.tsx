@@ -26,19 +26,6 @@ const Experience = () => {
 
   const experienceData = [
     {
-      title: "Java Developer Intern",
-      company: "Code Alpha",
-      period: "July 2024 – September 2024",
-      url: "https://example.com",
-      description: [
-        "Contributed to backend development of internal tools and optimized code performance",
-        "Worked with a team of developers to implement new features and fix bugs in the company's products",
-        "Developed RESTful APIs using Spring Boot and integrated with frontend applications",
-        "Participated in code reviews and improved system performance by 25%"
-      ],
-      skills: ["Java", "Spring Boot", "REST APIs", "Git", "Team Collaboration"]
-    },
-    {
       title: "Web Development Intern",
       company: "TechSolutions",
       period: "January 2024 – May 2024",
