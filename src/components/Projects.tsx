@@ -10,7 +10,6 @@ interface Project {
   tools: string[];
   link: string;
   github?: string;
-  image?: string;
   featured: boolean;
 }
 
@@ -45,7 +44,6 @@ const Projects = () => {
       tools: ["React", "Express", "Spotify API", "Heroku"],
       link: "https://example.com/project1",
       github: "https://github.com/user/project1",
-      image: "public/lovable-uploads/e701160d-f2ca-45ed-96e2-a1fb988aa954.png",
       featured: true
     },
     {
@@ -54,7 +52,6 @@ const Projects = () => {
       description: "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
       tools: ["React", "Express", "Spotify API", "Heroku"],
       link: "https://example.com/project2",
-      image: "public/lovable-uploads/926ab928-2cb3-435f-b112-5f9289919df3.png",
       featured: true
     },
     {
@@ -64,7 +61,6 @@ const Projects = () => {
       tools: ["VS Code", "Sublime Text", "Atom", "iTerm"],
       link: "https://example.com/project3",
       github: "https://github.com/user/project3",
-      image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=2070&auto=format&fit=crop",
       featured: true
     },
     {
@@ -74,7 +70,6 @@ const Projects = () => {
       tools: ["Gatsby", "Styled Components", "Netlify"],
       link: "https://example.com/project4",
       github: "https://github.com/user/project4",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop",
       featured: true
     },
     {
@@ -84,7 +79,6 @@ const Projects = () => {
       tools: ["React", "D3.js", "Python", "Flask"],
       link: "https://example.com/project5",
       github: "https://github.com/user/project5",
-      image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop",
       featured: true
     }
   ];
@@ -101,23 +95,8 @@ const Projects = () => {
             onMouseEnter={() => setFocusedProjectId(project.id)}
             onMouseLeave={() => setFocusedProjectId(null)}
           >
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 group">
-              <div className="md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-lg"
-                >
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-auto object-cover rounded transition-transform duration-500 group-hover:scale-105 max-h-[120px] sm:max-h-[150px]" 
-                  />
-                </a>
-              </div>
-              
-              <div className="md:col-span-8 flex flex-col justify-between">
+            <div className="group">
+              <div className="flex flex-col justify-between">
                 <h3 className="flex items-start sm:items-center text-xl sm:text-2xl text-white font-semibold mb-2 sm:mb-3">
                   <a 
                     href={project.link} 

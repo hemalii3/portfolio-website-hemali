@@ -10,7 +10,6 @@ interface Project {
   tools: string[];
   link: string;
   github?: string;
-  image?: string;
 }
 
 const AllProjects = () => {
@@ -208,29 +207,8 @@ const AllProjects = () => {
               onMouseEnter={() => setFocusedProjectId(project.id)}
               onMouseLeave={() => setFocusedProjectId(null)}
             >
-              <div className="grid grid-cols-12 gap-8 group">
-                <div className="col-span-12 md:col-span-4 rounded overflow-hidden mb-4 md:mb-0">
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block overflow-hidden rounded-lg"
-                  >
-                    {project.image ? (
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="w-full h-auto object-cover rounded transition-transform duration-500 group-hover:scale-105 max-h-[150px]" 
-                      />
-                    ) : (
-                      <div className="bg-[#1EAEDB]/5 h-[150px] w-full flex items-center justify-center">
-                        <span className="text-[#1EAEDB] text-lg">No Preview Available</span>
-                      </div>
-                    )}
-                  </a>
-                </div>
-                
-                <div className="col-span-12 md:col-span-8 flex flex-col justify-between">
+              <div className="group">
+                <div className="flex flex-col justify-between">
                   <h3 className="flex items-center text-2xl text-white font-semibold mb-3">
                     <a 
                       href={project.link} 
@@ -293,10 +271,10 @@ const AllProjects = () => {
               <div className="flex items-center">
                 <Mail size={22} className="text-[#1EAEDB] mr-4" />
                 <a 
-                  href="mailto:hemalisuthar.work@gmail.com" 
+                  href="mailto:contact.hemali3@gmail.com" 
                   className="text-white hover:text-[#1EAEDB] transition-colors inline-link text-xl"
                 >
-                  hemalisuthar.work@gmail.com
+                  contact.hemali3@gmail.com
                 </a>
               </div>
               
@@ -366,7 +344,7 @@ const AllProjects = () => {
             </div>
             
             <a 
-              href="mailto:hemalisuthar.work@gmail.com" 
+              href="mailto:contact.hemali3@gmail.com" 
               className="button-link inline-flex items-center group text-lg font-semibold"
             >
               <span>Say Hello</span>
