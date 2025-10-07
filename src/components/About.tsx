@@ -31,19 +31,13 @@ const About = () => {
         <div>
           <div className="text-light-slate space-y-5 text-xl">
             <p>
-              Hello! I'm <span className="highlight-word">Hemali</span>, a data analyst passionate about transforming raw data into 
-              <span className="highlight-word"> actionable insights</span>. My journey in the data world began during my computer science studies 
-              when I discovered the power of <span className="highlight-word">data-driven decision making</span>.
+              Hello! I'm <span className="highlight-word">Hemali</span>, web developer and aspiring data analyst passionate about making <span className="highlight-word">web pages feel alive</span> and transforming raw data into <span className="highlight-word">actionable insights</span>. My journey in the data world began during my computer science studies when I discovered <span className="highlight-word">art of web pages</span>. I enjoy working with data as well.
             </p>
             <p>
-              I specialize in analyzing <span className="highlight-word">complex datasets</span>, creating insightful <span className="highlight-word">visualizations</span>, and 
-              developing <span className="highlight-word">machine learning models</span> that help organizations make better strategic decisions. 
-              With a strong foundation in <span className="highlight-word">statistics</span> and <span className="highlight-word">programming</span>, I enjoy solving challenging problems 
-              and uncovering hidden patterns in data.
+              I specialize in developing <span className="highlight-word">web pages</span>, <span className="highlight-word">APIs designing</span>, and visualising and working with <span className="highlight-word">complex data</span>. I work with <span className="highlight-word">SQL</span>, <span className="highlight-word">R</span>, <span className="highlight-word">Python</span> and <span className="highlight-word">Power BI</span> when putting my skills in actual work.
             </p>
             <p>
-              When I'm not immersed in data, you might find me exploring new visualization techniques, 
-              contributing to open-source projects, or sharing knowledge through blog posts and community forums.
+              When I'm not immersed in data, you might find me reading murder mystery or boring articles, listening songs or exploring completely new topic of IT.
             </p>
             
             <p>Here are a few technologies I've been working with recently:</p>
