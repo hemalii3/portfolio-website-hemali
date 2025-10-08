@@ -104,12 +104,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             Hemali Suthar
           </h1>
           <h2 className="text-xl sm:text-3xl md:text-4xl text-white/90 mb-3 sm:mb-8">
-            <span className="text-[#1EAEDB]">Data Analyst</span>
+            <span className="text-[#1EAEDB]">Data Analyst " Web Developer </span>
           </h2>
           <p className="text-base sm:text-xl md:text-2xl text-light-slate max-w-3xl mx-auto mb-3 sm:mb-6 px-3 sm:px-4">
-            I <span className="highlight-word">see</span>, <span className="highlight-word">play</span>, <span className="highlight-word">analyze</span> and <span className="highlight-word">visualize</span> data to make <span className="text-[#1EAEDB] font-semibold">right decisions</span>.
+            I create<span className="highlight-word">webpages</span>,and work with  <span className="highlight-word">data</span>, <span className="highlight-word"></span> to make decisions <span className="highlight-word">I know my way to make things work.</span> data to make <span className="text-[#1EAEDB] font-semibold"></span>.
           </p>
-          
+           
           {/* Social media icons */}
           <div className="flex justify-center space-x-3 sm:space-x-6 mt-3 sm:mt-4">
             <a 
