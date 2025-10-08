@@ -60,7 +60,7 @@ const Experience = () => {
       
       <div className="space-y-12 mt-10">
         {experienceData.map((experience, index) => (
-          <div key={index} className="bg-light-navy/30 p-6 rounded-lg">
+          <div key={index} className="bg-light-navy/30 p-6 rounded-lg transition-all duration-300 hover:bg-light-navy/40 hover:shadow-lg hover:-translate-y-1">
             <h3 className="text-xl font-medium text-lightest-slate mb-2">
               {experience.title}{' '}
               <span className="text-white">
@@ -78,15 +78,15 @@ const Experience = () => {
             <ul className="space-y-2 mb-4">
               {experience.description.map((bullet, i) => (
                 <li key={i} className="flex">
-                  <span className="text-white mr-2">▹</span>
-                  <span className="text-slate">{bullet}</span>
+                  <span className="text-[#1EAEDB] mr-2">▹</span>
+                  <span className="text-slate leading-relaxed">{bullet}</span>
                 </li>
               ))}
             </ul>
             
             <div className="flex flex-wrap gap-2 pt-2">
               {experience.skills.map((skill, i) => (
-                <span key={i} className="text-xs px-3 py-1 rounded font-mono bg-light-navy text-lightest-slate">
+                <span key={i} className="text-xs px-3 py-1 rounded font-mono bg-light-navy text-lightest-slate transition-all duration-300 hover:bg-[#1EAEDB]/20 hover:text-[#1EAEDB]">
                   {skill}
                 </span>
               ))}

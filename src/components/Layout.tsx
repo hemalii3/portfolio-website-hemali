@@ -104,10 +104,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             Hemali Suthar
           </h1>
           <h2 className="text-xl sm:text-3xl md:text-4xl text-white/90 mb-3 sm:mb-8">
-            <span className="text-[#1EAEDB]">Data Analyst " Web Developer </span>
+            <span className="text-[#1EAEDB]">Data Analyst & Web Developer</span>
           </h2>
-          <p className="text-base sm:text-xl md:text-2xl text-light-slate max-w-3xl mx-auto mb-3 sm:mb-6 px-3 sm:px-4">
-            I create<span className="highlight-word">webpages</span>,and work with  <span className="highlight-word">data</span>, <span className="highlight-word"></span> to make decisions <span className="highlight-word">I know my way to make things work.</span> data to make <span className="text-[#1EAEDB] font-semibold"></span>.
+          <p className="text-base sm:text-xl md:text-2xl text-light-slate max-w-3xl mx-auto mb-3 sm:mb-6 px-3 sm:px-4 leading-relaxed">
+            I create <span className="highlight-word">webpages</span> and work with <span className="highlight-word">data</span> to make decisions. <span className="highlight-word">I know my way to make things work.</span>
           </p>
            
           {/* Social media icons */}
@@ -116,7 +116,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               href="https://github.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              className="text-light-slate hover:text-[#1EAEDB] transition-all duration-300 hover:-translate-y-1"
               aria-label="GitHub"
             >
               <Github size={isMobile ? 18 : 24} />
@@ -125,7 +125,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               href="https://linkedin.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              className="text-light-slate hover:text-[#1EAEDB] transition-all duration-300 hover:-translate-y-1"
               aria-label="LinkedIn"
             >
               <Linkedin size={isMobile ? 18 : 24} />
@@ -134,7 +134,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               href="https://twitter.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              className="text-light-slate hover:text-[#1EAEDB] transition-all duration-300 hover:-translate-y-1"
               aria-label="Twitter"
             >
               <Twitter size={isMobile ? 18 : 24} />
@@ -143,7 +143,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               href="https://instagram.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              className="text-light-slate hover:text-[#1EAEDB] transition-all duration-300 hover:-translate-y-1"
               aria-label="Instagram"
             >
               <Instagram size={isMobile ? 18 : 24} />
@@ -152,7 +152,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               href="https://goodreads.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-light-slate hover:text-[#1EAEDB] transition-colors"
+              className="text-light-slate hover:text-[#1EAEDB] transition-all duration-300 hover:-translate-y-1"
               aria-label="Goodreads"
             >
               <Book size={isMobile ? 18 : 24} />
