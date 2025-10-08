@@ -39,46 +39,62 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Build a Spotify Connected App",
-      description: "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-      tools: ["React", "Express", "Spotify API", "Heroku"],
-      link: "https://example.com/project1",
-      github: "https://github.com/user/project1",
+      title: "Shyam Rasoi",
+      description: "Designed and developed a responsive restaurant website for Shyam Rasoi, a top-rated vegetarian restaurant located in Bhuj, Gujarat. Features include complete menu listings, gallery, blog, and contact details with SEO optimization.",
+      tools: ["React", "Responsive Design", "SEO", "UI/UX Design"],
+      link: "https://shyamrasoibhuj.com/",
       featured: true
     },
     {
       id: 2,
-      title: "Spotify Profile",
-      description: "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      tools: ["React", "Express", "Spotify API", "Heroku"],
-      link: "https://example.com/project2",
+      title: "Mina Bandhej Store",
+      description: "Developed a fully responsive e-commerce website for Mina Bandhej, a traditional saree and bandhani store. Implemented product listings, category filters, wishlist, cart functionality with integrated offers and secure checkout.",
+      tools: ["React", "E-commerce", "API Integration", "UI/UX Design"],
+      link: "https://www.minabandhej.in/",
       featured: true
     },
     {
       id: 3,
-      title: "Halcyon Theme",
-      description: "Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.",
-      tools: ["VS Code", "Sublime Text", "Atom", "iTerm"],
-      link: "https://example.com/project3",
-      github: "https://github.com/user/project3",
+      title: "Teque7 Website Redesign",
+      description: "Redesigned the company website in collaboration with a senior developer to improve performance, user experience, and modernize the overall design. Implemented responsive layouts and optimized page loading.",
+      tools: ["React.js", "Next.js", "JavaScript", "PHP"],
+      link: "https://example.com/teque7",
       featured: true
     },
     {
       id: 4,
-      title: "brittanychiang.com (v4)",
-      description: "An old portfolio site built with Gatsby with 6k+ stars and 3k+ forks.",
-      tools: ["Gatsby", "Styled Components", "Netlify"],
-      link: "https://example.com/project4",
-      github: "https://github.com/user/project4",
+      title: "Business Intelligence & Data Analytics - Mercedes-Benz",
+      description: "Designed interactive Power BI dashboards integrating financial, automotive, and demographic datasets to provide actionable insights for investors and stakeholders. Analyzed revenue trends, stock prices, and COVID-19 impact.",
+      tools: ["Python", "Power BI", "SQL", "Excel", "Web Scraping"],
+      link: "https://example.com/mercedes-bi",
+      github: "https://github.com",
       featured: true
     },
     {
       id: 5,
-      title: "Data Analysis Dashboard",
-      description: "An interactive dashboard for visualizing complex datasets with customizable filters and real-time updates.",
-      tools: ["React", "D3.js", "Python", "Flask"],
-      link: "https://example.com/project5",
-      github: "https://github.com/user/project5",
+      title: "911 Emergency Calls Data Analysis",
+      description: "Conducted exploratory data analysis on ~99k emergency call records, identifying patterns and trends. Applied advanced visualizations to uncover temporal and spatial patterns in public safety data.",
+      tools: ["Python", "Pandas", "Seaborn", "Matplotlib", "Jupyter"],
+      link: "https://example.com/911-analysis",
+      github: "https://github.com",
+      featured: true
+    },
+    {
+      id: 6,
+      title: "Alzheimer's Disease Prediction",
+      description: "Preprocessed CT/MRI brain scans and built a Convolutional Neural Network to classify different stages of Alzheimer's with ~99% accuracy. Demonstrated effective multi-class medical image classification.",
+      tools: ["Python", "TensorFlow", "Keras", "OpenCV", "CNN"],
+      link: "https://example.com/alzheimer-prediction",
+      github: "https://github.com",
+      featured: true
+    },
+    {
+      id: 7,
+      title: "Online Retail Customer Segmentation",
+      description: "Applied RFM analysis and clustering algorithms (KMeans, DBSCAN) on UK retail data to segment customers. Identified high-value and low-engagement customer segments to support targeted marketing strategies.",
+      tools: ["Python", "Scikit-learn", "KMeans", "DBSCAN", "RFM Analysis"],
+      link: "https://example.com/customer-segmentation",
+      github: "https://github.com",
       featured: true
     }
   ];
