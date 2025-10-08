@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:block">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="button-outline">
+            <a href="/resume.pdf" download className="button-outline">
               Resume
             </a>
           </div>
@@ -86,8 +86,7 @@ const Navbar = () => {
             ))}
             <a 
               href="/resume.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              download 
               className="button-outline mt-4"
               onClick={() => setIsMenuOpen(false)}
             >

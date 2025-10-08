@@ -26,6 +26,20 @@ const Experience = () => {
 
   const experienceData = [
     {
+      title: "Freelance Web Developer",
+      company: "Self-Employed",
+      period: "2023 – Present",
+      url: "#",
+      description: [
+        "Designed and developed responsive websites for local businesses including restaurants and e-commerce stores",
+        "Built custom e-commerce solutions with product listings, cart functionality, and integrated payment systems",
+        "Collaborated with clients to understand requirements and deliver tailored web solutions",
+        "Implemented SEO best practices and performance optimizations to enhance visibility and user engagement",
+        "Worked with modern tech stack including React.js, Next.js, PHP, and JavaScript for full-stack development"
+      ],
+      skills: ["React", "Next.js", "JavaScript", "PHP", "E-commerce", "SEO", "Responsive Design"]
+    },
+    {
       title: "Web Development Intern",
       company: "TechSolutions",
       period: "January 2024 – May 2024",
